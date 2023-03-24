@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "jobs#index"
   resources :jobs do
   resources :appointments, only: [:new, :create, :show]
-  resources :job_applications	, only: [:create]
+  resources :job_applications, only: [:create]
   resources :favorites, only: [:new, :create, :show]
   resources :chatrooms, only: [:new, :create, :show]
   resources :messages, only: [:create]
