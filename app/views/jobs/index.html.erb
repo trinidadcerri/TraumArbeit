@@ -1,1 +1,8 @@
 <h1>This is jobs index page</h1>
+<% @jobs.each do |job| %>
+  <h4><%= job.position %></h4>
+  <p><%= job.description %></p>
+  <p><%= job.salary %></p>
+  <p><%= job.level %></p>
+  <p><%= job.address %></p>
+<% end %>
