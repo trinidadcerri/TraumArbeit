@@ -13,11 +13,11 @@
 </div>
 <div class="cards">
 <% @jobs.each do |job|%>
-<p><%= job.position %></p>
-<p><%= job.level %></p>
-<p><%= job.address %></p>
-<p><%= job.salary %></p>
-  <%= link_to "See details", jobs_path(job) %>
+<p>Title: <%= job.position %></p>
+<p>Level: <%= job.level %></p>
+<p>Address: <%= job.address %></p>
+<p>Salary: <%= job.salary %> Euro</p>
+  <%= link_to "See details", job %>
 <% end %>
 </div>
 </div>
