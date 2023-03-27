@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
   root to: "jobs#index"
   resources :jobs do
-  resources :appointments, only: [:new, :create, :show]
-  resources :job_applications, only: [:create]
-  resources :favorites, only: [:new, :create, :show]
-  resources :chatrooms, only: [:new, :create, :show]
-  resources :messages, only: [:create]
+    resources :appointments, only: [:new, :create, :show]
+    resources :job_applications, only: [:create]
+    resources :favorites, only: [:new, :create, :show]
+    resources :chatrooms, only: [:new, :create, :show]
+    resources :messages, only: [:create]
   end
   get '/dashboard', to: 'pages#dashboard'
   get 'job_applications/:id/accept', to: 'job_applications#accept', as: :accept
