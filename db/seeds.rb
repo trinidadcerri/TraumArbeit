@@ -14,7 +14,7 @@ puts "Creating users..."
 maria_gutierrez = {email: "maria_gutierrez@example.com", password: "123456", first_name: "Maria", last_name: "Gutierrez", role: "job_seeker", profile_description: "I am flexible, reliable and possess excellent time keeping skills. I am an enthusiastic, self-motivated, reliable, responsible and hard working person." }
 first_user = User.new(maria_gutierrez)
 first_user.avatar.attach(io: File.open("app/assets/images/maria_gutierrez.jpg"), filename: first_user.last_name, content_type: "image/jpg")
-first_user.pdfs.attach(io: File.open("app/assets/images/maria_gutierrez_cv.jpg"), filename: first_user.last_name, content_type: "image/jpg")
+first_user.cvs.attach(io: File.open("app/assets/images/maria_gutierrez_cv.jpg"), filename: first_user.last_name, content_type: "image/jpg")
 first_user.save!
 ###
 
