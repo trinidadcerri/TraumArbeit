@@ -1,8 +1,23 @@
-<h1>This is jobs index page</h1>
-<% @jobs.each do |job| %>
-  <h4><%= job.position %></h4>
-  <p><%= job.description %></p>
-  <p><%= job.salary %></p>
-  <p><%= job.level %></p>
-  <p><%= job.address %></p>
+<div class="container">
+<%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control input",
+    placeholder: "Looking for the job...", class: "input"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+<div class="banner">
+<h1>Traum job</h1>
+<h3>Our goal is to make your job searchan inspiring process and not an anslaving one</h3>
+</div>
+<div class="cards">
+<% @jobs.each do |job|%>
+<p><%= job.position %></p>
+<p><%= job.level %></p>
+<p><%= job.address %></p>
+<p><%= job.salary %></p>
+  <%= link_to "See details", jobs_path(job) %>
+<% end %>
+</div>
+</div>
