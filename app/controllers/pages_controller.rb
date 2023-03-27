@@ -3,4 +3,12 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def candidatesindex
+    @users = User.all
+  end
+
+  def candidatesshow
+    @user = User.find(params[:id])
+  end
 end
