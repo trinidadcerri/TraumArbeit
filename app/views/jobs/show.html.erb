@@ -4,5 +4,5 @@
 <%= @job.address %>
 <%= @job.level %>
 <%= @job.jobdescription %>
-<%= link_to "Save this job to favorites", @favorite %>
+<%= button_to "Save this job to favorites", job_favorites_path(@job), method: :post %>
 <%# link_to "Apply for this job", job %>

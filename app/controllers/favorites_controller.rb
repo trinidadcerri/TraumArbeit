@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_favorite, only: [:show, :create, :destroy]
+  before_action :set_favorite, only: [:show, :destroy]
 
   def index
     @favorites = Favorite.all
@@ -9,12 +9,12 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new(review_params)
-    @job = JOb.find(params[:job_id])
-    @favorite.job = @favorite
+    @favorite = Favorite.new
+    @job = Job.find(params[:job_id])
+    @favorite.job = @job
     @favorite.user = current_user
     if @favorite.save
-      redirect_to @job
+      redirect_to favorites_path
     else
       render 'jobs/show', status: :unprocessable_entity
     end

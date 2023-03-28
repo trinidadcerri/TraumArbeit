@@ -1,0 +1,9 @@
+<h1>My saved JP</h1>
+<% @favorites.each do |favorite| %>
+<ul>
+<li>
+<%= favorite.job.position %>
+<p><%= favorite.job.jobdescription %></p>
+</li>
+</ul>
+<% end %>
