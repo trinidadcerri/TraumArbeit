@@ -17,7 +17,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
-  # def job_params
-  #   params.require(:kitchen).permit(:name, :address, :description, :price, :capacity, :photo)
-  # end
+  def job_params
+    params.require(:job).permit(:position, :description, :salary, :price, :level, :address, :jobdescription)
+  end
 end
