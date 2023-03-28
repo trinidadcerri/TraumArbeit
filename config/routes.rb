@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     resources :chatrooms, only: [:new, :create, :show]
     resources :messages, only: [:create]
   end
-  get '/employerindex', to: 'pages#candidatesindex'
-  get '/candidatesshow', to: 'pages#candidatesshow'
+  get '/candidates', to: 'pages#employer_index'
+  get '/candidates/:id', to: 'pages#candidates_show', as: :candidate
   get '/dashboard', to: 'pages#dashboard'
   get 'job_applications/:id/accept', to: 'job_applications#accept', as: :accept
   get 'job_applications/:id/decline', to: 'job_applications#decline', as: :decline
