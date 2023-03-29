@@ -15,4 +15,9 @@ class PagesController < ApplicationController
   def dashboard
     @favorites = Favorite.where(user: current_user)
   end
+
+  def employer_profile
+    # @jobs = Job.where(user: current_user)
+    # @appointments = Appointment.where(user: current_user)
+  end
 end
