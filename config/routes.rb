@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   resources :jobs do
     resources :appointments, only: [:new, :create, :show]
-    resources :job_applications, only: [:create]
+    resources :job_applications, only: [:new, :create, :show]
     resources :favorites, only: [:new, :create, :show]
     resources :chatrooms, only: [:new, :create, :show]
     resources :messages, only: [:create]
   end
   resources :favorites, only: [:index]
+  resources :job_applications, only: [:index]
   get '/candidates', to: 'pages#employer_index'
   get '/candidates/:id', to: 'pages#candidates_show', as: :candidate
   get '/employer', to: 'pages#employer_profile', as: :employer_profile
