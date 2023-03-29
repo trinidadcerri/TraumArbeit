@@ -1,6 +1,8 @@
 <h1>This is show page</h1>
-<div style="height:200px; background-image: url('<%= cl_image_path @user.avatar.key if @user.avatar.key %>')"></div>
+<%= cl_image_tag @user.avatar.key, height: 300, width: 400, crop: :fill %>
 <h3><%= @user.first_name %></h3>
 <h3><%= @user.last_name %></h3>
 <p><%= @user.profile_description %></p>
-<div><%= @user.cvs %></div>
+<% @user.cvs.each do |cv| %>
+  <%= cl_image_tag cv.key, height: 300, width: 400, crop: :fill %>
+<% end %>
