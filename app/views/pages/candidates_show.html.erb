@@ -4,5 +4,7 @@
 <h3><%= @user.last_name %></h3>
 <p><%= @user.profile_description %></p>
 <% @user.cvs.each do |cv| %>
-  <%= cl_image_tag cv.key, height: 300, width: 400, crop: :fill %>
+<div>
+    <iframe src="https://res.cloudinary.com/dzk0qfl8v/image/upload/v1680086400/Stuffosphere/ebeturk_resume.pdf" width="100%" height="600"></iframe>
+</div>
 <% end %>
