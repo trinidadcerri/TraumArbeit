@@ -6,6 +6,9 @@ class PagesController < ApplicationController
 
   def employer_index
     @users = User.all
+    if current_user.job_seeker == true
+      redirect_to jobs_path # redirect to job seeker index + flash "you can not access"
+    end
   end
 
   def candidates_show
