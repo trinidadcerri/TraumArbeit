@@ -1,15 +1,14 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :set_job, only: [:show, :edit, :update, :destroy]
   def index
     @jobs = Job.all
   end
 
   def show
+    @favorite = Favorite.new
   end
 
-  # def show
-  # end
 
   private
 
