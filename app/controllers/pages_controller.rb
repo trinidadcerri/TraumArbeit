@@ -11,4 +11,8 @@ class PagesController < ApplicationController
   def candidates_show
     @user = User.find(params[:id])
   end
+
+  def dashboard
+    @favorites = Favorite.where(user: current_user)
+  end
 end

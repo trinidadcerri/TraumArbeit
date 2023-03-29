@@ -1,0 +1,22 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to "My profile", dashboard_path, class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+   <%= link_to "My favorites", favorites_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">My Cvs</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My calendar</a>
+  </li>
+</ul>
+<div class="user-profile">
+<%= cl_image_tag current_user.avatar.key, style:"width:200px; height:200px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+<div class="profile-description"> About me:
+<%= current_user.profile_description %>
+</div>
+<button type="button" class="btn btn-outline-success mt-5 mx-5">Messages</button>
+<button type="button" class="btn btn-outline-success mt-5">My pending appointments</button>
+</div>
