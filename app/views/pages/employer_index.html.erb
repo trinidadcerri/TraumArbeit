@@ -2,9 +2,12 @@
   <h1>Employer Index</h1>
   <div class="cards">
     <% @users.each do |user|%>
-      <div style="background-image: url('<%= cl_image_path user.avatar.key if user.avatar.key %>')"></div>
+      <%= cl_image_tag user.avatar.key, height: 300, width: 400, crop: :fill %>
       <p>Name: <%= user.first_name %></p>
       <p>Lastname: <%= user.last_name %></p>
+      <div>
       <%= link_to "See profile", candidate_path(user.id) %>
+      </div>
     <% end %>
   </div>
+

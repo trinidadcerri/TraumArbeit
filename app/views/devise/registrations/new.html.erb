@@ -21,11 +21,10 @@
     <%= f.input :last_name,
                 required: true,
                 input_html: { autocomplete: "last-name" } %>
-    <%= f.input :role,
-                required: true,
-                input_html: { autocomplete: "role" } %>
+    <%= f.input :job_seeker,
+                required: true %>
    <%= f.input  :avatar, as: :file, required: true %>
-   <%= f.input  :cvs, as: :file, required: true %>
+   <%= f.input  :cvs, as: :file %>
    <%= f.input  :profile_description , required: true%>
   </div>
 

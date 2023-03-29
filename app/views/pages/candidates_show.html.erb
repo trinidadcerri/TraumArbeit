@@ -3,3 +3,9 @@
 <h3><%= @user.first_name %></h3>
 <h3><%= @user.last_name %></h3>
 <p><%= @user.profile_description %></p>
+<% @user.cvs.each do |cv| %>
+<div>
+<%= cv.url %>
+    <iframe src="<%= cv.url %>" width="100%" height="600"></iframe>
+</div>
+<% end %>
