@@ -9,7 +9,6 @@ class JobsController < ApplicationController
     @favorite = Favorite.new
   end
 
-
   private
 
   def set_job

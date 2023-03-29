@@ -1,9 +1,38 @@
 class JobApplicationsController < ApplicationController
-  def create
-    #create new application
-    #redirect to show page
+  before_action :set_app, only: [:show, :destroy]
+
+  def index
+    @apps = JobApplication.all
   end
+
   def show
+    @job = Job.find(params[:job_id])
+  end
+
+  def create
+    @app = JobApplication.new
+    @job = Job.find(params[:job_id])
+    @app.job = @job
+    @app.user = current_user
+    if @app.save
+      redirect_to job_job_application_path(@job, @app)
+    else
+      render 'job_applications/show', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @app.destroy
+  end
+
+  private
+
+  def app_params
+    params.require(:app).permit(:status)
+  end
+
+  def set_app
+    @favorite = JobApplication.find(params[:id])
   end
 
 end
