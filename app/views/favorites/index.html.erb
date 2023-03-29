@@ -1,9 +1,24 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to "My profile", dashboard_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+   <%= link_to "My favorites", favorites_path, class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">My Cvs</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My calendar</a>
+  </li>
+</ul>
 <h1>My saved JP</h1>
 <% @favorites.each do |favorite| %>
 <ul>
 <li>
-<%= favorite.job.position %>
-<p><%= favorite.job.jobdescription %></p>
+<p>Job position: <%= favorite.job.position %></p>
+<p>Job description: <%= favorite.job.jobdescription %></p>
+<p>Salary: <%= favorite.job.salary%> Euro per month</p>
 </li>
 </ul>
 <% end %>
