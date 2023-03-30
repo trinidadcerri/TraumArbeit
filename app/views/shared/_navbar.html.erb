@@ -12,7 +12,11 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", jobs_path, class: "nav-link" %>
+              <% if current_user.job_seeker == true %>
+                <%= link_to "Home", jobs_path, class: "nav-link" %>
+              <% else %>
+                <%= link_to "Home", candidates_path, class: "nav-link" %>
+              <% end %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>

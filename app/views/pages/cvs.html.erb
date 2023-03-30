@@ -1,0 +1,9 @@
+    <div class="h1">My Cvs </div>
+      <% if current_user.cvs != [] %>
+        <% current_user.cvs.each do |cv| %>
+          <div>
+            <% cv.url %>
+            <iframe src="<%= cv.url %>" width="50%" height="710"></iframe>
+          </div>
+        <% end %>
+      <% end %>
