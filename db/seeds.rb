@@ -6,46 +6,51 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "Cleaning database..."
-
-########### Users
+########### Seed file
 puts "Cleaning database..."
 Job.destroy_all
 User.destroy_all
-########### Users
-puts "Creating users..."
-### User 1
-maria_gutierrez = {email: "maria_gutierrez@example.com", password: "123456", first_name: "Maria", last_name: "Gutierrez", role: "job_seeker", profile_description: "Energetic and passionate college student working towards a communications degree at Murrayfield School of Marketing. Aiming to use skills in writing, photography, desktop publishing, and public relations at a summer internship at Schuester Digital Media Group." }
-first_user = User.create(maria_gutierrez)
-first_user.avatar.attach(io: File.open("app/assets/images/maria_gutierrez_photo.jpg"), filename: first_user.last_name, content_type: "image/jpg")
-first_user.cvs.attach(io: File.open("app/assets/pdfs/maria_gutierrez_cv.pdf"), filename: first_user.last_name, content_type: "application/pdf")
-first_user.save!
+########### Job Seekers
+puts "Creating job seekers..."
+### Jobseeker 1
+maria_gutierrez = {email: "maria_gutierrez@example.com", password: "123456", first_name: "Maria", last_name: "Gutierrez", job_seeker: true, profile_description: "Energetic and passionate college student working towards a communications degree at Murrayfield School of Marketing. Aiming to use skills in writing, photography, desktop publishing, and public relations at a summer internship at Schuester Digital Media Group." }
+first_jobseeker = User.create(maria_gutierrez)
+first_jobseeker.avatar.attach(io: File.open("app/assets/images/maria_gutierrez_photo.jpg"), filename: first_jobseeker.last_name, content_type: "image/jpg")
+first_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/maria_gutierrez_cv.pdf"), filename: first_jobseeker.last_name, content_type: "application/pdf")
+first_jobseeker.save!
 ###
-### User 2
-reece_edwards = {email: "reece_edwards@example.com", password: "123456", first_name: "Reece", last_name: "Edwards", role: "job_seeker", profile_description: "Empathic and responsible physician with 10+ years of experience in nurturing patient well-being and facility sustainability. Looking to provide healthcare excellence at The Penshaw Medical Center. At East Forge Medical, spearheaded and maintained Centurion City State accreditation." }
-second_user = User.create(reece_edwards)
-second_user.avatar.attach(io: File.open("app/assets/images/reece_edwards_photo.jpg"), filename: second_user.last_name, content_type: "image/jpg")
-second_user.cvs.attach(io: File.open("app/assets/pdfs/reece_edwards_cv.pdf"), filename: second_user.last_name, content_type: "application/pdf")
-second_user.save!
-### User 3
-francois_mercer = {email: "francois_mercer@example.com", password: "123456", first_name: "Francois", last_name: "Mercer", role: "job_seeker", profile_description: "I am a professional creative designer with 8 years of experience project management, advertisement, and computer aided design. Proven ability to transform client ideas into beautiful, functional design solutions." }
-third_user = User.create(francois_mercer)
-third_user.avatar.attach(io: File.open("app/assets/images/francois_mercer_photo.jpg"), filename: third_user.last_name, content_type: "image/jpg")
-third_user.cvs.attach(io: File.open("app/assets/pdfs/francois_mercer_cv.pdf"), filename: third_user.last_name, content_type: "application/pdf")
-third_user.save!
-### User 4
-sebastian_bennet = {email: "sebastian_bennet@example.com", password: "123456", first_name: "Sebastian", last_name: "Bennet", role: "job_seeker", profile_description: "High-performing psychology major eager to join an innovative organization like Austen Tech, where I can apply my human resources knowledge and skills in a startup environment." }
-fourth_user = User.create(sebastian_bennet)
-fourth_user.avatar.attach(io: File.open("app/assets/images/sebastian_bennet_photo.jpg"), filename: fourth_user.last_name, content_type: "image/jpg")
-fourth_user.cvs.attach(io: File.open("app/assets/pdfs/sebastian_bennet_cv.pdf"), filename: fourth_user.last_name, content_type: "application/pdf")
-fourth_user.save!
-### User 5
-olivia_wilson = {email: "olivia_wilson@example.com", password: "123456", first_name: "Olivia", last_name: "Wilson", role: "job_seeker", profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team." }
-fifth_user = User.create(olivia_wilson)
-fifth_user.avatar.attach(io: File.open("app/assets/images/olivia_wilson_photo.jpg"), filename: fifth_user.last_name, content_type: "image/jpg")
-fifth_user.cvs.attach(io: File.open("app/assets/pdfs/olivia_wilson_cv.pdf"), filename: fifth_user.last_name, content_type: "application/pdf")
-fifth_user.save!
+### Jobseeker 2
+reece_edwards = {email: "reece_edwards@example.com", password: "123456", first_name: "Reece", last_name: "Edwards", job_seeker: true, profile_description: "Empathic and responsible physician with 10+ years of experience in nurturing patient well-being and facility sustainability. Looking to provide healthcare excellence at The Penshaw Medical Center. At East Forge Medical, spearheaded and maintained Centurion City State accreditation." }
+second_jobseeker = User.create(reece_edwards)
+second_jobseeker.avatar.attach(io: File.open("app/assets/images/reece_edwards_photo.jpg"), filename: second_jobseeker.last_name, content_type: "image/jpg")
+second_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/reece_edwards_cv.pdf"), filename: second_jobseeker.last_name, content_type: "application/pdf")
+second_jobseeker.save!
+### Jobseeker 3
+francois_mercer = {email: "francois_mercer@example.com", password: "123456", first_name: "Francois", last_name: "Mercer", job_seeker: true, profile_description: "I am a professional creative designer with 8 years of experience project management, advertisement, and computer aided design. Proven ability to transform client ideas into beautiful, functional design solutions." }
+third_jobseeker = User.create(francois_mercer)
+third_jobseeker.avatar.attach(io: File.open("app/assets/images/francois_mercer_photo.jpg"), filename: third_jobseeker.last_name, content_type: "image/jpg")
+third_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/francois_mercer_cv.pdf"), filename: third_jobseeker.last_name, content_type: "application/pdf")
+third_jobseeker.save!
+### Jobseeker 4
+sebastian_bennet = {email: "sebastian_bennet@example.com", password: "123456", first_name: "Sebastian", last_name: "Bennet", job_seeker: true, profile_description: "High-performing psychology major eager to join an innovative organization like Austen Tech, where I can apply my human resources knowledge and skills in a startup environment." }
+fourth_jobseeker = User.create(sebastian_bennet)
+fourth_jobseeker.avatar.attach(io: File.open("app/assets/images/sebastian_bennet_photo.jpg"), filename: fourth_jobseeker.last_name, content_type: "image/jpg")
+fourth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/sebastian_bennet_cv.pdf"), filename: fourth_jobseeker.last_name, content_type: "application/pdf")
+fourth_jobseeker.save!
+### Jobseeker 5
+olivia_wilson = {email: "olivia_wilson@example.com", password: "123456", first_name: "Olivia", last_name: "Wilson", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team." }
+fifth_jobseeker = User.create(olivia_wilson)
+fifth_jobseeker.avatar.attach(io: File.open("app/assets/images/olivia_wilson_photo.jpg"), filename: fifth_jobseeker.last_name, content_type: "image/jpg")
+fifth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/olivia_wilson_cv.pdf"), filename: fifth_jobseeker.last_name, content_type: "application/pdf")
+fifth_jobseeker.save!
 
+########### Employers
+puts "Creating employers..."
+### Employer 1
+starbucks = {email: "starbucks@example.com", password: "123456", first_name: "Joseph", last_name: "Green", job_seeker: false, profile_description: "Starbucks Corporation is an American multinational chain of coffeehouses and roastery reserves headquartered in Seattle, Washington. It is the world's largest coffeehouse chain." }
+first_employer = User.create(starbucks)
+first_employer.avatar.attach(io: File.open("app/assets/images/starbucks.png"), filename: first_employer.email, content_type: "image/jpg")
+first_employer.save!
 
 ########### Jobs
 ##########
