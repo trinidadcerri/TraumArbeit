@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     if current_user.job_seeker == true
       redirect_to jobs_path, notice: "You are not authorized to access this page"
     end
-    @users = User.all
+    @users = User.where.not(id: current_user.id)
   end
 
   def candidates_show
