@@ -11,13 +11,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
               <% if current_user.job_seeker == true %>
+          <li class="nav-item active">
                 <%= link_to "Home", jobs_path, class: "nav-link" %>
-              <% else %>
-                <%= link_to "Home", candidates_path, class: "nav-link" %>
-              <% end %>
           </li>
+              <% else %>
+          <li class="nav-item active">
+                <%= link_to "Home", candidates_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+                <%= link_to "Post a Job", new_job_path, class: "nav-link" %>
+          </li>
+              <% end %>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
