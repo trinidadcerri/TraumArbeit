@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
   resources :favorites, only: [:index]
+  get '/cvs', to: 'pages#cvs'
   resources :job_applications, only: [:index]
   get '/candidates', to: 'pages#employer_index'
   get '/candidates/:id', to: 'pages#candidates_show', as: :candidate
