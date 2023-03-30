@@ -1,5 +1,6 @@
 a{
 	cursor:pointer;
+  text-decoration: none;
 }
 
 p{
@@ -33,7 +34,8 @@ h5{
 
 .card{
 	border-radius: 25px;
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .card img{
@@ -74,4 +76,12 @@ i{
 
 i:hover{
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.7) 0px 18px 36px -18px inset;
+}
+.flex {
+  display: flex;
+}
+.flex-align {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
