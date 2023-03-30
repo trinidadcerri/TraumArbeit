@@ -9,6 +9,53 @@ class JobsController < ApplicationController
     @favorite = Favorite.new
   end
 
+  def new
+    if current_user.job_seeker == true
+      redirect_to jobs_path, notice: "You are not authorized to access this page"
+    end
+    @job = Job.new
+  end
+
+  def create
+    @job = Job.new(job_params)
+    @job.user = current_user
+    if @job.save
+      redirect_to candidates_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    if current_user.job_seeker == true
+      redirect_to jobs_path, notice: "You are not authorized to access this page"
+    end
+  end
+
+  def update
+    if current_user == @job.user
+      if @job.update(job_params)
+        redirect_to @job, notice: 'Job position was successfully updated.'
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    else
+      redirect_to jobs_path, alert: 'You are not authorized to update this job.'
+    end
+  end
+
+  def destroy
+    if current_user.job_seeker == true
+      redirect_to jobs_path, notice: "You are not authorized to access this page"
+    end
+    if current_user == @job.user
+      @job.destroy
+      redirect_to jobs_path, notice: 'Job position was successfully destroyed.'
+    else
+      redirect_to jobs_path, alert: 'You are not authorized to perform this action.'
+    end
+  end
+
   private
 
   def set_job
@@ -16,6 +63,6 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:position, :description, :salary, :level, :address, :jobdescription)
+    params.require(:job).permit(:position, :description, :salary, :level, :address)
   end
 end
