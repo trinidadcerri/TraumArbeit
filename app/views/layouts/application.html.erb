@@ -15,13 +15,14 @@
   </head>
 
   <body>
-  <div class="container">
-  <% if user_signed_in? %>
-    <%= render "shared/navbar" %>
-  <% end %>
-  <%= render "shared/flashes" %>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <%= render "shared/navbar" %>
+    <% end %>
+    <div class="main-container">
+      <%= render "shared/flashes" %>
+      <%= yield %>
     </div>
+      <%= render "shared/footer" %>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'></script><script type="module" src="./script.js"></script>
   </body>
 </html>

@@ -1,16 +1,18 @@
 <div>
   <h2> My Profile </h2>
+      <button type="button" class="btn btn-outline-success mt-5 mx-5">Messages</button>
     <div>
       <%= cl_image_tag current_user.avatar.key, style:"width:200px; height:200px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <h4> Profile description: </h4>
       <p><%= current_user.profile_description %></p>
     </div>
-    <div>
-      <button type="button" class="btn btn-outline-success mt-5 mx-5">Messages</button>
-      <button type="button" class="btn btn-outline-success mt-5">My pending job posittion aplications</button>
-    </div>
-    
+
     <div>
       <h4> My calendar </h4>
     </div>
+
+    <button type="button" class="btn btn-outline-success mt-5">
+      <%= link_to "My pending job applications", job_applications_path %>
+    </button>
+
 </div>
