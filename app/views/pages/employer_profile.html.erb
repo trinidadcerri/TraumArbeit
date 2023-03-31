@@ -11,6 +11,18 @@
       <h4> My calendar </h4>
     </div>
 
+    <div>
+      <h4> My posted Job Positions </h4>
+    <% @jobs.each do |job| %>
+      <h4><%= job.position %></h4>
+      <%= link_to "Show Job Position", job_path(job) %>
+      <%= link_to "Edit this Job Position", edit_job_path(job) %>
+      <%= link_to "Delete this Job Position", job_path(job) %>
+    <% end %>
+    </div>
+
+
+
     <button type="button" class="btn btn-outline-success mt-5">
       <%= link_to "My pending job applications", job_applications_path %>
     </button>
