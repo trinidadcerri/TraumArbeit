@@ -12,8 +12,8 @@
     </div>
 
     <div>
-      <h4> My posted Job Positions </h4>
-    <% @jobs.each do |job| %>
+      <h4> My current Job Postings </h4>
+    <% current_user.jobs.each do |job| %>
       <h4><%= job.position %></h4>
       <%= link_to "Show Job Position", job_path(job) %>
       <%= link_to "Edit this Job Position", edit_job_path(job) %>
