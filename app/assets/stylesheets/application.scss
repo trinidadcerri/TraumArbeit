@@ -12,3 +12,9 @@
 @import "pages/index";
 @import "components/card";
 // @import fontAwesome from "https://cdn.skypack.dev/font-awesome@4.7.0";
+
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
