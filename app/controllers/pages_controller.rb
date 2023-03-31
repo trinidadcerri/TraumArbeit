@@ -32,13 +32,8 @@ class PagesController < ApplicationController
   def employer_profile
     if current_user.job_seeker == true
       redirect_to jobs_path, notice: "You are not authorized to access this page"
-<<<<<<< HEAD
     else
       @jobs = Job.where(user: current_user)
-=======
->>>>>>> master
     end
-    # @jobs = Job.where(user: current_user)
-    # @appointments = Appointment.where(user: current_user)
   end
 end
