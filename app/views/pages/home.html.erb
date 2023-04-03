@@ -1,15 +1,20 @@
 <!-- Homepage inspo: https://mobirise.com/extensions/levelm4/agency/ -->
 
 <!-- Banner -->
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(app/assets/images/homepage-portfolio.jpg);">
-  <div class="container">
-    <h1>TraumJob</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
+<section class="banner-image banner-background" style="z-index: 0; background-image: url(<%= asset_path 'homepage-portfolio.jpg' %>); position: relative;">
+  <div class="container align-left">
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
+        <h1 class="h1-style display-2">Traumjob</h1>
+        <p class= "p-style">
+          Our goal is to make your search <br>
+          an inspiring process <br>
+          and not an enslaving one. <br>
+        </p>
+      </div>
+    </div>
   </div>
-</div>
-
-
-<!-- Feature 1: Steps to follow (3 cards) -->
+</section>
 
 
 <!-- Feature 2: Options -- find a: JOB / CANDIDATE -->
@@ -19,15 +24,49 @@
     <%= link_to "Find a Candidate", candidates_path %>
 </div>
 
-<!-- Feature 3: Pricing table -->
+<div class="options-container">
+  <div class="options_box">
+    <%= link_to(jobs_path) do %>
+    <div class="options_item">
+      <div class="options-item_link">
+        <div class="options-item_bg"></div>
 
-<!-- Feature 4: The team 1 -->
+        <div class="options-item_title">
+          Find a Job Position
+        </div>
 
-<!-- Feature 5: The team 2 -->
+        <div class="options-clic-box">
+          See more
+          <span class="options-clic">
+            details..
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-<!-- Footer for Homepage -->
+    <div class="options_item">
+      <a href="#" class="options-item_link">
+        <div class="options-item_bg"></div>
+
+        <div class="options-item_title">
+          Find a Candidate
+        </div>
+
+        <div class="options-clic-box">
+          Clic
+          <span class="options-clic">
+            Here
+          </span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
 
 
+<!-- Feature 3: Carrousel -->
 <div class="dream-job-picture">
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -51,3 +90,5 @@
   </button>
 </div>
 </div>
+
+<!-- Feature 4: The team 1 -->

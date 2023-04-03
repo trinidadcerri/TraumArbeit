@@ -1,21 +1,134 @@
 // Specific CSS for your home-page
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+.banner-image {
+  padding-top: 195px;
+  padding-bottom: 195px;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
+.banner-background {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.h1-style {
+  font-family: roboto;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  margin: 0;
+  color: rgb(11, 49, 39);
 }
 
-.banner p {
+.p-style {
+  font-family: roboto;
   font-size: 20px;
-  color: white;
+  color: rgb(11, 49, 39);
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.options-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+
+
+body {
+  background-color: #006d52b0;
+}
+
+.options_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  padding: 50px 0;
+}
+
+.options_box a {
+  text-decoration: none
+}
+
+.options_item {
+  -ms-flex-preferred-size: calc(50% - 30px);
+  flex-basis: calc(50% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.options-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #024840;
+
+  overflow: hidden;
+
+  position: relative;
+}
+.options-item_link:hover,
+.options-item_link:hover .options-item_date {
+  text-decoration: none;
+  color: #c8f3f6;
+}
+.options-item_link:hover .options-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.options-item_title {
+  font-family: roboto;
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+  color: #c8f3f6;
+
+  z-index: 2;
+  position: relative;
+}
+.options-clic-box {
+  font-size: 18px;
+  color: #c8f3f6;
+
+  z-index: 2;
+  position: relative;
+}
+.options-clic {
+  font-family: roboto;
+  font-weight: bold;
+  color: #00c1b1;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.options-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #00c1b1;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.options_item:nth-child(2n) .options-item_bg {
+  background-color: #00c1b1;
 }

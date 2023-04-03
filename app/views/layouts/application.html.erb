@@ -14,10 +14,9 @@
   </head>
 
   <body>
+  <% if @homepage == false %>
+  <%= render "shared/navbar" %>
     <div class="page-container">
-        <% if user_signed_in? %>
-          <%= render "shared/navbar" %>
-        <% end %>
       <div class="container">
         <div style="margin-top: 100px; margin-bottom: 50px;">
           <main id="main-content">
@@ -26,7 +25,10 @@
         </div>
         <%= render "shared/flashes" %>
       </div>
-      <%= render "shared/footer" %>
+    <%= render "shared/footer" %>
     </div>
+  <% else %>
+    <%= yield %>
+  <% end %>
   </body>
 </html>
