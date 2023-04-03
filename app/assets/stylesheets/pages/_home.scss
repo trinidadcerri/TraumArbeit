@@ -8,10 +8,10 @@
 
 /*--Banner--*/
 #banner{
-  background: linear-gradient(rgba(0,0,0,0.5),#009688),image-url('homepage-portfolio.jpg');
+  background: linear-gradient(rgba(0,0,0,0.5),#8ccbcb),image-url('homepage-portfolio.jpg');
   background-size: cover;
   background-position: center;
-  height: 75vh;
+  height: 100vh;
 }
 // .logo{
 //   width: 140px;
@@ -71,7 +71,7 @@
   position: fixed;
   right: -250px;
   top: 0;
-  background: #009688;
+  background: #8ccbcb;
   z-index: 2;
   transition: 0.5s;
 }
@@ -86,7 +86,7 @@ nav ul li a{
 #menuBtn{
   width: 50px;
   height: 50px;
-  background: #009688;
+  background: #8ccbcb;
   text-align: center;
   position: fixed;
   right: 30px;
@@ -121,7 +121,7 @@ nav ul li a{
 .title-text p{
   margin: auto;
   font-size: 20px;
-  color: #009688;
+  color: #8ccbcb;
   font-weight: bold;
   position: relative;
   z-index: 1;
@@ -131,7 +131,7 @@ nav ul li a{
   content: '';
   width: 50px;
   height: 35px;
-  background: linear-gradient(#019587,#fff);
+  background: linear-gradient(#8ccbcb,#fff);
   position: absolute;
   top: -20px;
   left: 0;
@@ -155,7 +155,7 @@ nav ul li a{
   flex-basis: 50%;
 }
 .features-img{
-  background: linear-gradient(rgba(0,0,0,0.5),#009688),image-url('dream_job2.jpg');
+  background: linear-gradient(rgba(0,0,0,0.5),#8ccbcb),image-url('dream_job2.jpg');
   flex-basis: 50%;
   margin: auto;
 }
@@ -167,7 +167,7 @@ nav ul li a{
   text-align: left;
   margin-bottom: 10px;
   font-weight: 100;
-  color: #009688;
+  color: #8ccbcb;
 }
 .features-desc{
   display: flex;
@@ -180,8 +180,8 @@ nav ul li a{
   font-size: 30px;
   line-height: 50px;
   border-radius: 8px;
-  color: #009688;
-  border: 1px solid #009688;
+  color: #8ccbcb;
+  border: 1px solid #8ccbcb;
 }
 .feature-text p{
   padding: 0 20px;
@@ -207,7 +207,7 @@ nav ul li a{
 #path{
   width: 100%;
   padding: 70px 0;
-  background: #efefef;
+  background-color: rgb(211,211,211);
 }
 .path-box{
   width: 80%;
@@ -235,7 +235,7 @@ nav ul li a{
   top: 0;
   border-radius: 7px;
   cursor: pointer;
-  background: linear-gradient(rgba(0,0,0,0.5),#009688);
+  background: linear-gradient(rgba(157, 197, 184, 0.261),#8ccbcb);
   opacity: 0;
   transition: 1s;
 }
@@ -281,13 +281,12 @@ hr{
   }
 }
 
-/*---testimonial----*/
-
-#testimonial{
+/*---Reviews----*/
+#review{
   width: 100%;
   padding: 70px 0;
 }
-.testimonial-row{
+.review-row{
   width: 80%;
   margin: auto;
   display: flex;
@@ -295,7 +294,7 @@ hr{
   align-items: flex-start;
   flex-wrap: wrap;
 }
-.testimonial-col{
+.review-col{
   flex-basis: 28%;
   padding: 10px;
   margin-bottom: 30px;
@@ -304,107 +303,32 @@ hr{
   cursor: pointer;
   transition: transform .5s;
 }
-.testimonial-col p{
+.review-col p{
   font-size: 14px;
 }
-.user{
+.reviewer{
   display: flex;
   align-items: center;
   margin: 20px 0;
 }
-.user img{
+.reviewer img{
   width: 40px;
   margin-right: 20px;
   border-radius: 3px;
 }
-.user-info .fa{
+.reviewer-info .fa{
   margin-left: 10px;
-  color: #27c0ff;
+  color: #8ccbcb;
   font-size: 20px;
 }
-.user-info small{
-  color: #009688;
+.reviewer-info small{
+  color: #8ccbcb;
 }
-.testimonial-col:hover{
+.review-col:hover{
   transform: translateY(-7px);
 }
 @media screen and (max-width: 770px){
-  .testimonial-col{
+  .review-col{
       flex-basis: 100%;
-  }
-}
-
-
-/*--footer--*/
-
-#footer{
-  padding: 100px 0 20px;
-  background: #efefef;
-  position: relative;
-}
-.footer-row{
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.footer-left,.footer-right{
-  flex-basis: 45%;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-.footer-right{
-  text-align: right;
-}
-.footer-row h1{
-  margin: 10px 0;
-}
-.footer-row p{
-  line-height: 35px;
-}
-.footer-left .fa,.footer-right .fa{
-  font-size: 20px;
-  color: #009688;
-  margin: 10px;
-}
-.footer-img{
-  max-width: 370px;
-  opacity: 0.1;
-  position: absolute;
-  left: 50%;
-  top: 35%;
-  transform: translate(-50%,-50%);
-}
-.social-links{
-  text-align: center;
-}
-.social-links .fa{
-  height: 40px;
-  width: 40px;
-  font-size: 20px;
-  line-height: 40px;
-  border: 1px solid #009688;
-  margin: 40px 5px 0;
-  color: #009688;
-  cursor: pointer;
-  transition: .5s;
-}
-.social-links .fa:hover{
-  background: #009688;
-  color: #fff;
-  transform: translateY(-7px);
-}
-.social-links p{
-  font-size: 12px;
-  margin-top: 20px;
-}
-@media screen and (max-width: 770px){
-  .footer-left,.footer-right{
-      flex-basis: 100%;
-      font-size: 14px;
-  }
-  .footer-img{
-      top: 25%;
   }
 }
