@@ -1,53 +1,258 @@
-<!-- Homepage inspo: https://mobirise.com/extensions/levelm4/agency/ -->
+<body>
+<!--Banner-->
+<section id="banner">
+    <%# image_tag(logo.jpg), class: "logo" %>
+    <div class="banner-text">
+        <h1>Traumjob</h1>
+          <p>
+            Our goal is to make your search <br>
+            an inspiring process <br>
+            and not an enslaving one. <br>
+          </p>
+        <div class="banner-btn">
+            <%= link_to(jobs_path) do %>
+              <div><span></span>Find a Job</div>
+            <% end %>
+            <%= link_to(candidates_path) do %>
+              <div><span></span>Find a Candidate</div>
+            <% end %>
+        </div>
+    </div>
+</section>
 
-<!-- Banner -->
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(app/assets/images/homepage-portfolio.jpg);">
-  <div class="container">
-    <h1>TraumJob</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
+<!--Nav Bar-->
+<div id="sideNav" style="right: -250px;">
+    <nav>
+    <ul>
+        <li><a href="#banner">HOME</a></li>
+        <li><a href="#feature">FEATURES</a></li>
+        <li><a href="#service">YOUR PATH</a></li>
+        <li><a href="#review">OUR REVIEWS</a></li>
+        <li><a href="#footer">CONTACT US</a></li>
+    </ul>
+    </nav>
+</div>
+<div id="menuBtn">
+    <img src="images/menu.png" id="menu">
+</div>
+
+<!--Features-->
+<section id="feature">
+<div class="title-text">
+<p>FEATURES</p>
+<h1>How it works</h1>
+</div>
+<div class="feature-box">
+    <div class="features">
+        <h1>Create an Account</h1>
+        <div class="features-desc">
+            <div class="feature-icon">
+                <i class="fa-sharp fa-light fa-user"></i>
+            </div>
+            <div class="feature-text">
+                <p>You can Sign In in our page and have all the benefits as a Job Seeker or even as a future employer!</p>
+            </div>
+        </div>
+        <h1>Look for a Job</h1>
+        <div class="features-desc">
+            <div class="feature-icon">
+                <i class="fa-sharp fa-light fa-magnifying-glass"></i>
+            </div>
+            <div class="feature-text">
+                <p>You could look for jobs, apply for that unique opportunity, chat with your future employer or even schedule your appoiments</p>
+            </div>
+        </div>
+        <h1>Post a new job offer</h1>
+        <div class="features-desc">
+            <div class="feature-icon">
+                <i class="fa-sharp fa-light fa-hand-holding-heart"></i>
+            </div>
+            <div class="feature-text">
+                <p>If you have already created your business and need someone on board to help you boost it, this space is also for you!</p>
+            </div>
+        </div>
+    </div>
+    <div class="features-img">
+        <img src="images/dream_job2.jpg">
+    </div>
+</div>
+</section>
+
+<!--User Paths-->
+<section id="path">
+    <div class="title-text">
+    <p>YOUR PATH</p>
+    <h1>Your options are here!</h1>
+    </div>
+    <div class="path-box">
+        <div class="user-path">
+            <img src="images/user-jobseeker.jpg">
+            <div class="overlay"></div>
+            <div class="path-desc">
+                <h3>Find a Job</h3>
+                <hr>
+                <p>Save and apply for jobs, keep track of your journey with your own calendar and have up-to-date your cvs.</p>
+            </div>
+        </div>
+        <div class="user-path">
+            <img src="images/user-employer.jpg">
+            <div class="overlay"></div>
+            <div class="path-desc">
+                <h3>Find a Candidate</h3>
+                <hr>
+                <p>Find the right match for your company here. Talk to the candidates and schedule meetings in your calendar.</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!--Reviews-->
+<section id="review">
+    <div class="title-text">
+    <p>OUR REVIEWS</p>
+    <h1>What users say about us</h1>
+    </div>
+<div class="review-row">
+    <div class="review-col">
+        <div class="reviewer">
+            <img src="images/reviewer-1.jpg">
+            <div class="reviewer-info">
+                <h4>John W. <i class="fa-brands fa-twitter"></i></h4>
+                <small>@johnw</small>
+            </div>
+        </div>
+        <p>After my bootcamp I could not focus on another process. Traumjob secured me my dream job the day I trusted the app!</p>
+    </div>
+    <div class="review-col">
+        <div class="reviewer">
+        <img src="images/reviewer-2.jpg">
+        <div class="reviewer-info">
+            <h4>Mery M. <i class="fa-brands fa-twitter"></i></h4>
+            <small>@merym</small>
+        </div>
+        </div>
+        <p>I was unemployed and desperate. Traumjob helped me to focus, save my process and get a job in a healthy and safe way!</p>
+    </div>
+    <div class="review-col">
+        <div class="reviewer">
+        <img src="images/reviewer-3.jpg">
+        <div class="reviewer-info">
+            <h4>Adam L. <i class="fa-brands fa-twitter"></i></h4>
+            <small>@adaml</small>
+        </div>
+        </div>
+        <p>I was looking for the ideal person for a very important position in my company. The order offered by the app made the way to find him more pleasant and simple.</p>
+    </div>
+</div>
+</section>
+
+<!--footer-->
+<footer id="footer" class="text-center text-white">
+  <div class="container p-4 pb-0">
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
   </div>
-</div>
 
-
-<!-- Feature 1: Steps to follow (3 cards) -->
-
-
-<!-- Feature 2: Options -- find a: JOB / CANDIDATE -->
-<div>
-    <h3>What do you want to do?</h3>
-    <%= link_to "Find a Job", jobs_path %>
-    <%= link_to "Find a Candidate", candidates_path %>
-</div>
-
-<!-- Feature 3: Pricing table -->
-
-<!-- Feature 4: The team 1 -->
-
-<!-- Feature 5: The team 2 -->
-
-<!-- Footer for Homepage -->
-
-
-<div class="dream-job-picture">
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="<%= image_url("dream_job.jpg") %>" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="<%= image_url("dream_job2.jpg")%>" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="<%= image_url("dream_job3.jpg") %>" class="d-block w-100" alt="...">
-    </div>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(211,211,211);">
+    © 2023 Copyright:
+    <a class="text-white" href="https://traum-job.herokuapp.com/">Traum-job.herokuapp.com</a>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
+</footer>
+
+</section>
+
+
+
+
+
+
+<script>
+var menuBtn = document.getElementById("menuBtn")
+var sideNav = document.getElementById("sideNav")
+var menu = document.getElementById("menu")
+
+sideNav.style.right = "-250px";
+
+menuBtn.onclick = function(){
+    if(sideNav.style.right == "-250px"){
+        sideNav.style.right = "0";
+        menu.src = "images/close.png";
+    }
+    else{
+        sideNav.style.right = "-250px";
+        menu.src = "images/menu.png";
+    }
+}
+
+var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 1000,
+	speedAsDuration: true
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
