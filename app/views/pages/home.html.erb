@@ -1,12 +1,13 @@
 <!-- Homepage inspo: https://mobirise.com/extensions/levelm4/agency/ -->
 
 <!-- Banner -->
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/home/trinidad/code/trinidadcerri/TraumArbeit/app/assets/images/homepage-portfolio.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(app/assets/images/homepage-portfolio.jpg);">
   <div class="container">
-    <h1>Traum Job</h1>
-    <p>Our goal is to make your job search an inspiring process and not an enslaving one.</p>
+    <h1>TraumJob</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
   </div>
 </div>
+
 
 <!-- Feature 1: Steps to follow (3 cards) -->
 
@@ -25,3 +26,28 @@
 <!-- Feature 5: The team 2 -->
 
 <!-- Footer for Homepage -->
+
+
+<div class="dream-job-picture">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="<%= image_url("dream_job.jpg") %>" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="<%= image_url("dream_job2.jpg")%>" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="<%= image_url("dream_job3.jpg") %>" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
