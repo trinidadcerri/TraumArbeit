@@ -7,6 +7,7 @@ class JobApplicationsController < ApplicationController
 
   def show
     @job = Job.find(params[:job_id])
+    @chatroom = Chatroom.create(job_application_id: @job.id, name: @job.position)
   end
 
   def create
