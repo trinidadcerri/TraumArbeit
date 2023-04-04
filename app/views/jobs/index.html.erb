@@ -1,16 +1,12 @@
-<div class="card-category" style ="color: black; opacity: 0.6">
-<%= form_with url: jobs_path, method: :get, class: "d-flex mt-5" do %>
+<div class="search-bar" style ="color: black; opacity: 0.6; ">
+<%= form_with url: jobs_path, method: :get, class: "d-flex " do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control input",
     placeholder: "Looking for the job...", class: "input"
   %>
-  <%= submit_tag "Search", class: "button-25"%>
+  <%= submit_tag "Search", class: "search-button"%>
 <% end %>
-</div>
-<div class="card-category">
-<h1>Traum job</h1>
-<h3>Our goal is to make your job searchan inspiring process and not an anslaving one</h3>
 </div>
 <div class="cards">
 <div class="py-5 mb-5">
@@ -20,7 +16,7 @@
     <div class="card box-shadow my-5">
     <%= image_tag "#{job.level}.jpg", class: "card-img-top", height: 170%>
       <div class="card-body">
-        <%= link_to "See details", job, class: "button-25 mb-3"%>
+        <%= link_to "See details", job, class: "card-button mb-3"%>
         <h5 class="card-title"><%= job.position %></h5>
         <p class="card-text">Salary: <%= job.salary %> Euro</p>
       </div>
