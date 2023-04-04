@@ -1,13 +1,38 @@
-<div class="search-bar" style ="color: black; opacity: 0.6; ">
-<%= form_with url: jobs_path, method: :get, class: "d-flex " do %>
+<div class="main-container">
+<div class="search-bar mb-5">
+<%= form_with url: jobs_path, method: :get, class: "d-flex ", style: "width:100%" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control input",
-    placeholder: "Looking for the job...", class: "input"
+    placeholder: "Looking for the job...", class: "input",
+    style: "width:100%"
   %>
-  <%= submit_tag "Search", class: "search-button"%>
+  <%= submit_tag "Search", class: "search-button" ,  style: "margin-left: 5px"%>
 <% end %>
 </div>
+<div class="dream-job-picture mt-3">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="<%= image_url("dream_job.jpg") %>" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<%= image_url("dream_job2.jpg")%>" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<%= image_url("dream_job3.jpg") %>" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>
 <div class="cards">
 <div class="py-5 mb-5">
   <div class="row justify-content-center">
@@ -25,6 +50,7 @@
     </div>
   </div>
 <% end %>
+</div>
 </div>
 </div>
 </div>
