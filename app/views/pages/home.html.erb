@@ -1,7 +1,6 @@
 <body>
 <!--Banner-->
 <section id="banner">
-    <%# image_tag(logo.jpg), class: "logo" %>
     <div class="banner-text">
         <h1>Traumjob</h1>
           <p>
@@ -26,14 +25,14 @@
     <ul>
         <li><a href="#banner">HOME</a></li>
         <li><a href="#feature">FEATURES</a></li>
-        <li><a href="#service">YOUR PATH</a></li>
+        <li><a href="#path">YOUR PATH</a></li>
         <li><a href="#review">OUR REVIEWS</a></li>
         <li><a href="#footer">CONTACT US</a></li>
     </ul>
     </nav>
 </div>
 <div id="menuBtn">
-    <img src="images/menu.png" id="menu">
+      <%= image_tag "menu.png", id:"menu" %>
 </div>
 
 <!--Features-->
@@ -73,7 +72,7 @@
         </div>
     </div>
     <div class="features-img">
-        <img src="images/dream_job2.jpg">
+        <%= image_tag "dream_job2.jpg", class:"features-img" %>
     </div>
 </div>
 </section>
@@ -85,23 +84,27 @@
     <h1>Your options are here!</h1>
     </div>
     <div class="path-box">
+        <%= link_to jobs_path, class:"links" do %>
         <div class="user-path">
-            <img src="images/user-jobseeker.jpg">
+            <%= image_tag "user-jobseeker.jpg" %>
             <div class="overlay"></div>
             <div class="path-desc">
                 <h3>Find a Job</h3>
                 <hr>
                 <p>Save and apply for jobs, keep track of your journey with your own calendar and have up-to-date your cvs.</p>
             </div>
+        <% end %>
         </div>
+        <%= link_to candidates_path, class:"links" do %>
         <div class="user-path">
-            <img src="images/user-employer.jpg">
+            <%= image_tag "user-employer.jpg" %>
             <div class="overlay"></div>
             <div class="path-desc">
                 <h3>Find a Candidate</h3>
                 <hr>
                 <p>Find the right match for your company here. Talk to the candidates and schedule meetings in your calendar.</p>
             </div>
+          <% end %>
         </div>
     </div>
 
@@ -116,7 +119,7 @@
 <div class="review-row">
     <div class="review-col">
         <div class="reviewer">
-            <img src="images/reviewer-1.jpg">
+            <%= image_tag "reviewer-1.jpg", class:"reviewer-img" %>
             <div class="reviewer-info">
                 <h4>John W. <i class="fa-brands fa-twitter"></i></h4>
                 <small>@johnw</small>
@@ -126,7 +129,7 @@
     </div>
     <div class="review-col">
         <div class="reviewer">
-        <img src="images/reviewer-2.jpg">
+        <%= image_tag "reviewer-2.jpg", class:"reviewer-img" %>
         <div class="reviewer-info">
             <h4>Mery M. <i class="fa-brands fa-twitter"></i></h4>
             <small>@merym</small>
@@ -136,7 +139,7 @@
     </div>
     <div class="review-col">
         <div class="reviewer">
-        <img src="images/reviewer-3.jpg">
+        <%= image_tag "reviewer-3.jpg", class:"reviewer-img" %>
         <div class="reviewer-info">
             <h4>Adam L. <i class="fa-brands fa-twitter"></i></h4>
             <small>@adaml</small>
@@ -230,7 +233,7 @@ sideNav.style.right = "-250px";
 menuBtn.onclick = function(){
     if(sideNav.style.right == "-250px"){
         sideNav.style.right = "0";
-        menu.src = "images/close.png";
+        menu.src = "images/menu.png";
     }
     else{
         sideNav.style.right = "-250px";
@@ -242,6 +245,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 	speed: 1000,
 	speedAsDuration: true
 });
+
 </script>
 
 
