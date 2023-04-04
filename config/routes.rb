@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     resources :appointments, only: [:new, :create, :show]
     resources :job_applications, only: [:new, :create, :show]
     resources :favorites, only: [:new, :create, :show]
-    resources :chatrooms, only: [:new, :create, :show]
-    resources :messages, only: [:create]
+  end
+  resources :chatrooms, only: [:index, :show] do
+    resources :messages, only: :create
   end
   resources :favorites, only: [:index]
   get '/cvs', to: 'pages#cvs'
