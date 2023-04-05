@@ -1,5 +1,8 @@
- <ul>
+ <div class="container chatroom">
+ <h1 class="chatroom-header">Select the chat you want message:</h1>
+ <ul class="chatroom-list">
   <% @chatrooms.each do |chatroom| %>
       <li><%= link_to chatroom.name, chatroom_path(chatroom)%></li>
   <% end %>
  </ul>
+</div>
