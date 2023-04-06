@@ -1,18 +1,18 @@
 <div class="main-container">
 <!--Search bar-->
-<div class="search-bar mb-5">
-<%= form_with url: jobs_path, method: :get, class: "d-flex ", style: "width:100%" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control input",
-    placeholder: "Looking for candidates...", class: "input",
-    style: "width:100%"
-  %>
-  <%= submit_tag "Search", class: "search-button" ,  style: "margin-left: 5px"%>
-<% end %>
-</div>
+  <div class="search-bar mb-5">
+    <%= form_with url: jobs_path, method: :get, class: "d-flex ", style: "width:100%" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control input",
+        placeholder: "Looking for candidates...", class: "input",
+        style: "width:100%"
+      %>
+    <%= submit_tag "Search", class: "search-button" ,  style: "margin-left: 5px"%>
+    <% end %>
+  </div>
 <!--Carrousel-->
-<div class="dream-job-picture mt-3">
+  <div class="dream-job-picture mt-3">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -34,28 +34,28 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    </div>
+  </div>
   <!--User cards-->
-<div class="container">
-  <div class="main-card">
+  <div class="container">
+    <div class="main-card">
       <% @users.each do |user|%>
-    <div class="cards">
-      <div class="card">
-        <div class="content">
-          <div class="img">
-          <%= cl_image_tag user.avatar.key %>
-          </div>
-          <div class="details">
-            <p>
-            <%= user.first_name %> <br>
-            <%= user.last_name %>
-          </p>
-          <%= link_to "Open to work", candidate_path(user.id), class: "user-card-button"%>
+      <div class="cards">
+        <div class="card">
+          <div class="content">
+            <div class="img">
+              <%= cl_image_tag user.avatar.key %>
+            </div>
+            <div class="details">
+              <p>
+                <%= user.first_name %> <br>
+                <%= user.last_name %>
+              </p>
+              <%= link_to "Open to work", candidate_path(user.id), class: "user-card-button"%>
+            </div>
           </div>
         </div>
       </div>
-        </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
+  </div>
 </div>
