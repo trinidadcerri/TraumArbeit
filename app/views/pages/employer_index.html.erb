@@ -43,7 +43,11 @@
         <div class="card">
           <div class="content">
             <div class="img">
+            <% if user.avatar.attached? %>
               <%= cl_image_tag user.avatar.key %>
+              <% else %>
+              <h1>placeholder</h1>
+              <% end %>
             </div>
             <div class="details">
               <p style="font-size: 20px";>
