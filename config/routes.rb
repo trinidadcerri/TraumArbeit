@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'job_applications/:id/decline', to: 'job_applications#decline', as: :decline
   resources :appointments, only: :destroy
   resources :job_applications, only: :destroy
+  resources :favorites, only: :destroy
   # Defines the root path route ("/")
   # root "articles#index"
 end

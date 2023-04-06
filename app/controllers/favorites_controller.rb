@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:show, :destroy]
 
   def index
-    @favorites = Favorite.all
+    @favorites = Favorite.where(user_id: current_user.id)
   end
 
   def show
@@ -21,7 +21,14 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite.destroy
+    @favorite = Favorite.find(params[:id])
+    if current_user == @favorite.user
+
+      @favorite.destroy
+      redirect_to favorites_path, notice: 'Job position was successfully destroyed.'
+    else
+      redirect_to favorites_path, alert: 'You are not authorized to perform this action.'
+    end
   end
 
   private

@@ -21,7 +21,15 @@
     <div class="card box-shadow my-3">
     <%= image_tag "#{favorite.job.level}.jpg", class: "card-img-top", height: 200%>
       <div class="card-body">
+      <div class="row">
+      <div class="col-6">
         <%= link_to "Apply", chatrooms_path, class: "card-button mb-3", style: "width: 100px" %>
+      </div>
+      <div class="col-6">
+        <%= link_to "Delete", favorite_path(favorite), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: "card-button mb-3", style: "width: 100px" %>
+        </div>
+      </div>
         <h5 class="card-title"><%= favorite.job.position %></h5>
         <p class="card-text">Salary: <%= favorite.job.salary %> Euro</p>
       </div>
