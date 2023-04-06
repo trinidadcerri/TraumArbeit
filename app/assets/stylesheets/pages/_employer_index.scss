@@ -1,31 +1,30 @@
-.container{
+.candidates-container{
   display: flex;
-  max-width: 950px;
   width: 100%;
   overflow: hidden;
   padding: 80px 0;
 
 }
-.container .main-card{
+.candidates-container .candidates-main-card{
   display: flex;
   justify-content: space-evenly;
   width: 200%;
   transition: 1s;
 }
-.container .main-card .cards{
+.candidates-container .candidates-main-card .candidates-cards{
   margin: 0 20px;
 }
-.main-card .cards .card{
+.candidates-main-card .candidates-cards .candidates-card{
   background: #fff;
   border-radius: 12px;
   padding: 30px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.4s ease;
 }
-.main-card .cards .card:hover{
+.candidates-main-card .candidates-cards .candidates-card:hover{
   transform: translateY(-15px);
 }
-.cards .card .content{
+.candidates-cards .candidates-card .candidates-card-content{
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -33,26 +32,28 @@
   margin-left: auto;
   margin-right: auto;
 }
-.cards .card .content .img{
+.candidates-cards .candidates-card .candidates-card-content .candidates-card-img{
   height: 130px;
   width: 130px;
   border-radius: 50%;
   padding: 3px;
   background: #36A9AE;
   margin-bottom: 14px;
+    img{
+      height: 100%;
+      width: 100%;
+      border: 3px solid #ffff;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 }
-.card .content .img img{
-  height: 100%;
-  width: 100%;
-  border: 3px solid #ffff;
-  border-radius: 50%;
-  object-fit: cover;
+.candidates-card .candidates-card-content{
+  p {
+    font-size: 20px;
+    font-weight: 500;
+  }
 }
-.card .content .p{
-  font-size: 20px;
-  font-weight: 500;
-}
-.user-card-button {
+.candidates-card-button {
   background-color: #36A9AE;
   background-image: linear-gradient(#37ADB2, #329CA0);
   border: 1px solid #2A8387;
