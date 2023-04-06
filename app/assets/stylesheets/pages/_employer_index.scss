@@ -1,0 +1,77 @@
+.container{
+  display: flex;
+  max-width: 950px;
+  width: 100%;
+  overflow: hidden;
+  padding: 80px 0;
+
+}
+.container .main-card{
+  display: flex;
+  justify-content: space-evenly;
+  width: 200%;
+  transition: 1s;
+}
+.container .main-card .cards{
+  margin: 0 20px;
+}
+.main-card .cards .card{
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+.main-card .cards .card:hover{
+  transform: translateY(-15px);
+}
+.cards .card .content{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cards .card .content .img{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #36A9AE;
+  margin-bottom: 14px;
+}
+.card .content .img img{
+  height: 100%;
+  width: 100%;
+  border: 3px solid #ffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card .content .p{
+  font-size: 20px;
+  font-weight: 500;
+}
+.user-card-button {
+  background-color: #36A9AE;
+  background-image: linear-gradient(#37ADB2, #329CA0);
+  border: 1px solid #2A8387;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-family: -apple-system,".SFNSDisplay-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  line-height: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 11px 15px 12px;
+  text-align: center;
+  transition: box-shadow .05s ease-in-out,opacity .05s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  text-decoration: none;
+}
