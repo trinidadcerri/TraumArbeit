@@ -36,25 +36,32 @@
     </div>
   </div>
   <!--User cards-->
-  <div class="container">
-    <div class="main-card">
+  <div class="candidates-container">
+    <div class="candidates-main-card">
       <% @users.each do |user|%>
+<<<<<<< HEAD
       <div class="cards">
         <div class="card">
           <div class="content">
             <div class="img">
             <% if user.avatar.attached? %>
+=======
+      <div class="candidates-cards">
+        <div class="candidates-card">
+          <div class="candidates-card-content">
+            <div class="candidates-card-img">
+>>>>>>> c685ca3350fc77edcb1b1d0bbb197c6d17438c64
               <%= cl_image_tag user.avatar.key %>
               <% else %>
               <h1>placeholder</h1>
               <% end %>
             </div>
-            <div class="details">
+            <div class="candidates-card-details">
               <p style="font-size: 20px";>
                 <%= user.first_name %> <br>
                 <%= user.last_name %>
               </p>
-              <%= link_to "Open to work", candidate_path(user.id), class: "user-card-button"%>
+              <%= link_to "Open to work", candidate_path(user.id), class: "candidates-card-button"%>
             </div>
           </div>
         </div>
