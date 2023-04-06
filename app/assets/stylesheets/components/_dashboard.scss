@@ -1,0 +1,20 @@
+.content h1 {
+  font-size: 34px;
+  line-height: 1.25;
+}
+
+.content p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.content {
+  margin: 10px;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

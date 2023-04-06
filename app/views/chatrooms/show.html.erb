@@ -1,25 +1,18 @@
 <div class="container chatroom">
-  <h1>#<%= @chatroom.name %></h1>
-
   <div class="messages">
     <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.user.nickname %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
+      <div class="message" id="message-<%= message.id %>">
+        <div class="meta">
+          <div class="user"><strong><%= message.user.first_name %></strong></div>
+          <div class="time"><i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i></div>
+        </div>
+        <div class="content"><%= message.content %></div>
       </div>
     <% end %>
+
+  <%= simple_form_for [@chatroom, @message], html: {class: "form"} do |f| %>
+    <%= f.input :content, label: false, placeholder: "Type your message here..."%>
+    <%= f.submit "Send", class: "search-button" %>
+  <% end %>
   </div>
 </div>
-<%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@chatroom.name}",
-    wrapper_html: {class: "flex-grow-1"}
-  %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-<% end %>
