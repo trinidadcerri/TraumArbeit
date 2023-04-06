@@ -35,7 +35,7 @@
   width: 130px;
   border-radius: 50%;
   padding: 3px;
-  background: #FF676D;
+  background: #36A9AE;
   margin-bottom: 14px;
 }
 .card .content .img img{
@@ -48,12 +48,28 @@
 .card .content .details{
   font-size: 20px;
   font-weight: 500;
-  p {
-    color:rgb(0, 0, 0)
-  }
+  color: black;
 }
-// .details{
-//   p {
-//     color:rgb(0, 0, 0)
-//   }
-// }
+.user-card-button {
+  background-color: #36A9AE;
+  background-image: linear-gradient(#37ADB2, #329CA0);
+  border: 1px solid #2A8387;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: block;
+  font-family: -apple-system,".SFNSDisplay-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  line-height: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 11px 15px 12px;
+  text-align: center;
+  transition: box-shadow .05s ease-in-out,opacity .05s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  text-decoration: none;
+}

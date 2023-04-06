@@ -5,7 +5,7 @@
   <%= text_field_tag :query,
     params[:query],
     class: "form-control input",
-    placeholder: "Looking for the job...", class: "input",
+    placeholder: "Looking for candidates...", class: "input",
     style: "width:100%"
   %>
   <%= submit_tag "Search", class: "search-button" ,  style: "margin-left: 5px"%>
@@ -36,28 +36,26 @@
     </div>
     </div>
   <!--User cards-->
-  <div class="container">
-    <div class="main-card">
-        <% @users.each do |user|%>
-        <%= link_to candidate_path(user.id) do %>
-      <div class="cards">
-        <div class="card">
-         <div class="content">
-           <div class="img">
-            <%= cl_image_tag user.avatar.key %>
-           </div>
-           <div class="details">
-             <p>
-              <%= user.first_name %> <br>
-              <%= user.last_name %>
-            </p>
-             <p>Open to work</p>
-           </div>
-         </div>
-        </div>
-         </div>
-         <% end %>
-         <% end %>
+<div class="container">
+  <div class="main-card">
+      <% @users.each do |user|%>
+    <div class="cards">
+      <div class="card">
+        <div class="content">
+          <div class="img">
+          <%= cl_image_tag user.avatar.key %>
+          </div>
+          <div class="details">
+            <p>
+            <%= user.first_name %> <br>
+            <%= user.last_name %>
+          </p>
+          <%= link_to "Open to work", candidate_path(user.id), class: "user-card-button"%>
+          </div>
         </div>
       </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
 </div>
