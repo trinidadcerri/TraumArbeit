@@ -1,5 +1,5 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?kitchen);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?work);">
   <div class="container">
     <h1>Position: <strong><%= @job.position %></strong></h1>
     <p>
@@ -13,8 +13,8 @@
         <br>
     </p>
     <div class="d-flex">
-      <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "search-button", style: "width: 200px;" %>
-      <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "search-button mx-5", style: "width: 200px;" %>
+      <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
+      <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
     </div>
   </div>
 </div>

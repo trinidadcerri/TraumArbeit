@@ -39,11 +39,15 @@
   <div class="candidates-container">
     <div class="candidates-main-card">
       <% @users.each do |user|%>
-      <div class="candidates-cards">
-        <div class="candidates-card">
+      <div class="candidates-card">
+        <div class="card">
           <div class="candidates-card-content">
             <div class="candidates-card-img">
+            <% if user.avatar.attached? %>
               <%= cl_image_tag user.avatar.key %>
+              <% else %>
+              <h1>placeholder</h1>
+              <% end %>
             </div>
             <div class="candidates-card-details">
               <p style="font-size: 20px";>
