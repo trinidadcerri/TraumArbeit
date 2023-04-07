@@ -26,7 +26,7 @@
               <% @user.cvs.each do |cv| %>
               <div class="col mb-2">
               <% cv.url %>
-                  <iframe src="<%= cv.url %>" width="50%" height="500"></iframe>
+                  <iframe src="<%= cl_image_path(cv.key, secure: true) %>" width="50%" height="500"></iframe>
               </div>
               <% end %>
             </div>
