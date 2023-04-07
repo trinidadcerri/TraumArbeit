@@ -17,7 +17,7 @@
         <% current_user.cvs.each do |cv| %>
           <div>
             <% cv.url %>
-            <iframe src="<%= cv.url %>"
+            <iframe src="<%= cl_image_path(cv.key, secure: true) %>"
             style="
                       display: block;
                       margin: 0 auto;
