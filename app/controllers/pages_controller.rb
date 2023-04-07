@@ -26,6 +26,7 @@ class PagesController < ApplicationController
   end
 
   def cvs
+    raise
     @cvs = current_user.cvs
   end
 
