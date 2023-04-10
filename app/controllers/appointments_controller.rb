@@ -5,38 +5,26 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.all
   end
 
-  def create
-    @appointment = Appointment.new(appointment_params)
+  def new
     @job = Job.find(params[:job_id])
+    @appointment = Appointment.new
+  end
+
+  def create
+    @job = Job.find(params[:job_id])
+    @appointment = Appointment.new(appointment_params)
     @appointment.job = @job
     @appointment.user = current_user
-    if @appointment.save!
-      redirect_to job_appointment_path(@job, @appointment)
-    else
-      redirect_to "jobs/show", allow_other_host: true
-    end
+    @appointment.save!
+      redirect_to calendar_path(@job, @appointment)
   end
 
   def show
   end
 
-  def accept
-    @appointment = Appointment.find(params[:id])
-    @appointment.status = "accepted"
-    @appointment.save
-    redirect_to dashboard_path
-  end
-
-  def decline
-    @appointment = Appointment.find(params[:id])
-    @appointment.status = "declined"
-    @appointment.save
-    redirect_to dashboard_path
-  end
-
   def destroy
     @appointment.destroy
-    redirect_to dashboard_path, status: :see_other
+    redirect_to calendar_path, status: :see_other
   end
 
   private
@@ -46,6 +34,6 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:date, :time, :job_id, :user_id)
+    params.require(:appointment).permit(:date, :name, :job_id, :user_id)
   end
 end
