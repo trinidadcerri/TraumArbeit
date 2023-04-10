@@ -2,7 +2,11 @@ class JobsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_job, only: [:show, :edit, :update, :destroy]
   def index
-    @jobs = Job.all
+    if params[:query].present?
+      @jobs = Job.search_by_position_and_address(params[:query])
+    else
+      @jobs = Job.all
+    end
   end
 
   def show
