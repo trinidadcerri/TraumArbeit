@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many_attached :cvs
   has_many :jobs
+  has_many :job_applications, dependent: :destroy
   pg_search_scope :search_by_profesion_and_location,
   against: [ :profesion, :location ],
   using: {
