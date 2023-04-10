@@ -17,7 +17,7 @@
       <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
       <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
     <% else %>
-      <%= link_to "Back to my profile", employer_profile_path, class: "card-button mb-3", style: "width: 100px" %>
+      <%= link_to "My profile", employer_profile_path, class: "card-button", style: "width: 100px" %>
     <% end %>
     </div>
   </div>
