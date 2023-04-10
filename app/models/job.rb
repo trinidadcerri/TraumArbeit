@@ -7,4 +7,5 @@ class Job < ApplicationRecord
     tsearch: { prefix: true }
   }
   has_many :favorites, dependent: :destroy
+  has_many :job_applications, dependent: :destroy
 end
