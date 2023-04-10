@@ -23,8 +23,8 @@ Rails.application.routes.draw do
   get '/my_posts', to: 'pages#my_posts', as: :my_posts
   get 'job_applications/:id/accept', to: 'job_applications#accept', as: :accept
   get 'job_applications/:id/decline', to: 'job_applications#decline', as: :decline
-  get 'appointments/:id/accept', to: 'appointments#accept', as: :appointment_accept
-  get 'appointments/:id/decline', to: 'appointments#decline', as: :appointment_decline
+  get 'appointments/:id/appointment_accept', to: 'appointments#appointment_accept', as: :appointment_accept
+  get 'appointments/:id/appointment_decline', to: 'appointments#appointment_decline', as: :appointment_decline
   resources :appointments, only: :destroy
   resources :job_applications, only: :destroy
   resources :favorites, only: :destroy
