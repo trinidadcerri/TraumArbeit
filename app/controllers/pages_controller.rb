@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       redirect_to jobs_path, notice: "You are not authorized to access this page"
     end
     if params[:query].present?
-      @users = User.search_by_profesion_and_location(params[:query])
+      @users = User.where.not(id: current_user.id).search_by_profesion_and_location(params[:query])
     else
       @users = User.where.not(id: current_user.id)
     end
