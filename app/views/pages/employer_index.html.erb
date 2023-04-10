@@ -1,7 +1,7 @@
 <div class="main-container">
 <!--Search bar-->
   <div class="search-bar mb-5">
-    <%= form_with url: jobs_path, method: :get, class: "d-flex ", style: "width:100%" do %>
+    <%= form_with url: candidates_path, method: :get, class: "d-flex ", style: "width:100%" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control input",
