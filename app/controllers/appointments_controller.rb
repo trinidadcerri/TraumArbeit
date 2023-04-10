@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show, :create, :destroy]
+  before_action :set_appointment, only: [:show, :destroy]
 
   def index
     @appointments = Appointment.all
@@ -11,13 +11,12 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    # @job = Job.find(params[:job_id])
-    # @appointment = Appointment.new(appointment_params)
-    # @appointment.job = @job
-    # @appointment.user = current_user
-    # @appointment.save!
-    #   redirect_to calendar_path(@job, @appointment)
-    raise
+    @job = Job.find(params[:job_id])
+    @appointment = Appointment.new(appointment_params)
+    @appointment.job = @job
+    @appointment.user = current_user
+    @appointment.save!
+      redirect_to calendar_path(@job, @appointment)
   end
 
   def show
