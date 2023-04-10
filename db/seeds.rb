@@ -49,8 +49,13 @@ puts "Creating employers..."
 ### Employer 1
 starbucks = {email: "starbucks@example.com", password: "123456", first_name: "Joseph", last_name: "Green", job_seeker: false, profile_description: "Starbucks Corporation is an American multinational chain of coffeehouses and roastery reserves headquartered in Seattle, Washington. It is the world's largest coffeehouse chain.", nickname: "Starbucks", profesion: "Recluiter", location: "Berlin" }
 first_employer = User.create(starbucks)
-first_employer.avatar.attach(io: File.open("app/assets/images/starbucks.png"), filename: first_employer.email, content_type: "image/jpg")
+first_employer.avatar.attach(io: File.open("app/assets/images/starbucks.png"), filename: first_employer.email, content_type: "image/png")
 first_employer.save!
+### Employer 2
+google = {email: "google@example.com", password: "123456", first_name: "James", last_name: "Late", job_seeker: false, profile_description: "Google is an American multinational technology company focusing on online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, artificial intelligence, and consumer electronics.", nickname: "Google", profesion: "Recluiter", location: "Berlin" }
+second_employer = User.create(google)
+second_employer.avatar.attach(io: File.open("app/assets/images/google.png"), filename: second_employer.email, content_type: "image/png")
+second_employer.save!
 
 ########### Jobs
 ##########

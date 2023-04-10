@@ -26,8 +26,7 @@
                       <%= link_to "Show", job_path(job), class: "card-button mb-3", style: "width: 100px" %>
                     </div>
                     <div class="col-6">
-                      <%= link_to "Edit", edit_job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                      class: "card-button mb-3", style: "width: 100px" %>
+                      <%= link_to "Edit", edit_job_path(job), class: "card-button mb-3", style: "width: 100px" %>
                     </div>
                     <div class="col-6">
                       <%= link_to "Delete", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
@@ -41,8 +40,8 @@
                 <a href=""><i class="fas fa-euro-sign euro-icon"></i></a>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
