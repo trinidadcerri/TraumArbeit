@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/candidates', to: 'pages#employer_index'
   get '/candidates/:id', to: 'pages#candidates_show', as: :candidate
   get '/employer', to: 'pages#employer_profile', as: :employer_profile
+  get '/my_posts', to: 'pages#my_posts', as: :my_posts
   get 'job_applications/:id/accept', to: 'job_applications#accept', as: :accept
   get 'job_applications/:id/decline', to: 'job_applications#decline', as: :decline
   resources :appointments, only: :destroy
