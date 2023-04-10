@@ -33,6 +33,13 @@ class PagesController < ApplicationController
     @cvs = current_user.cvs
   end
 
+  def calendar
+    # @appointments = Appointment.all
+    start_date = params.fetch(:date, Date.today).to_date
+
+    @appointments = Appointment.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+  end
+
   def employer_profile
     if current_user.job_seeker == true
       redirect_to jobs_path, notice: "You are not authorized to access this page"

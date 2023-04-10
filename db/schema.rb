@@ -49,6 +49,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_10_083253) do
     t.bigint "job_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["job_id"], name: "index_appointments_on_job_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
