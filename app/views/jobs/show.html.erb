@@ -1,8 +1,21 @@
-<h1>This is job show page</h1>
-<%= @job.salary %>
-<%= @job.position %>
-<%= @job.address %>
-<%= @job.level %>
-<%= @job.description %>
-<%= button_to "Save this job to favorites", job_favorites_path(@job), method: :post %>
-<%= button_to "Apply for this job", job_job_applications_path(@job), method: :post %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?work);">
+  <div class="container">
+    <h1><i class="fa-solid fa-user-large"></i> <strong><%= @job.position %></strong></h1>
+
+    <p>
+         <i class="fa-solid fa-hand-holding-dollar"></i> <%= @job.salary %> <i class="fa-solid fa-euro-sign"></i>
+        <br>
+        <i class="fa-solid fa-location-dot"></i> <%= @job.address %>
+        <br>
+        <i class="fa-solid fa-suitcase"></i> <%= @job.level %>
+        <br>
+        <i class="fa-solid fa-user-doctor"></i> <%= @job.description %>
+        <br>
+    </p>
+    <div class="d-flex">
+      <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
+      <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
+    </div>
+  </div>
+</div>

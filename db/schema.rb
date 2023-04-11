@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_04_075122) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_10_134402) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_075122) do
     t.bigint "job_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer "status"
     t.index ["job_id"], name: "index_appointments_on_job_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
@@ -71,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_075122) do
   end
 
   create_table "job_applications", force: :cascade do |t|
-    t.string "status"
+    t.integer "status"
     t.bigint "user_id", null: false
     t.bigint "job_id", null: false
     t.datetime "created_at", null: false
@@ -115,6 +119,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_075122) do
     t.string "profile_description"
     t.boolean "job_seeker"
     t.string "nickname"
+    t.string "profesion"
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -8,7 +8,11 @@ class PagesController < ApplicationController
     if current_user.job_seeker == true
       redirect_to jobs_path, notice: "You are not authorized to access this page"
     end
-    @users = User.where.not(id: current_user.id)
+    if params[:query].present?
+      @users = User.where.not(id: current_user.id).search_by_profesion_and_location(params[:query])
+    else
+      @users = User.where.not(id: current_user.id)
+    end
   end
 
   def candidates_show
@@ -27,6 +31,12 @@ class PagesController < ApplicationController
 
   def cvs
     @cvs = current_user.cvs
+  end
+
+  def calendar
+    # @appointments = Appointment.all
+    start_date = params.fetch(:date, Date.today).to_date
+    @appointments = Appointment.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
 
   def employer_profile

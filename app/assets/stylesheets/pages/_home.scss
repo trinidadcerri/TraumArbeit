@@ -174,7 +174,7 @@ nav ul li a{
   align-items: center;
   margin-bottom: 40px;
 }
-.feature-icon .fa-sharp{
+.feature-icon .fa{
   width: 50px;
   height: 50px;
   font-size: 30px;
@@ -265,6 +265,15 @@ hr{
   bottom: 40%;
   opacity: 1;
 }
+.path-desc {
+  h3 {
+  color:white
+}
+
+p {
+ color:white
+}
+}
 @media screen and (max-width: 770px){
   .user-path{
       flex-basis: 100%;
@@ -330,13 +339,5 @@ hr{
 @media screen and (max-width: 770px){
   .review-col{
       flex-basis: 100%;
-  }
-}
-.links {
-  text-decoration: none;
-  color: #fff;
-  a {
-    color: #fff;
-    text-decoration: none;
   }
 }

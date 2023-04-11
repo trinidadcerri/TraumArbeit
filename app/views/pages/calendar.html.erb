@@ -1,0 +1,25 @@
+<div class="container">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to "My profile", dashboard_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+   <%= link_to "My favorites", favorites_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "My CVs", cvs_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "My calendar", calendar_path, class: "nav-link active" %>
+  </li>
+</ul>
+ <%= month_calendar(events: @appointments, attribute: :date) do |date, appointments| %>
+  <%= date %>
+
+  <% appointments.each do |appointment| %>
+    <div class="appointment" style="width: 200px;">
+      <p><%= appointment.name %></p>
+  <% end %>
+    </div>
+<% end %>
+</div>

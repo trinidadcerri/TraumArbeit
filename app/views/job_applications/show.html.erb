@@ -1,11 +1,19 @@
-<h1>Job Application</h1>
-<div class="job-description">
-<ul>
-<li>Position: <%= @job.position %></li>
-<li> Job description: <%= @job.description %></li>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?work);">
+  <div class="container">
+    <h1>Position: <strong><%= @job.position %></strong></h1>
+    <p>
+        Salary: <%= @job.salary %> Euro
+        <br>
+        Address: <%= @job.address %>
+        <br>
+        Field: <%= @job.level %>
+        <br>
+        Description: <%= @job.description %>
+        <br>
+    </p>
+    <div class="d-flex">
+      <%= link_to "Send message to employer", chatroom_path(@chatroom), class: "card-button mt-5", style: "width: 200px" %>
+      <%= link_to "Apply for appointment", new_job_appointment_path(@job), class: "card-button mx-5 mt-5", style: "width: 200px" %>
+    </div>
+  </div>
 </div>
-<button type="button" class="btn btn-outline-success mt-5">My current CVs</button>
-<button type="button" class="btn btn-outline-success mt-5">Choose CV</button>
-<button type="button" class="btn btn-outline-success mt-5">Send message</button>
-<%= link_to "Send message to employer", chatroom_path(@chatroom) %>

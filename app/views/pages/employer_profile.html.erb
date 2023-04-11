@@ -1,30 +1,36 @@
-<div>
-  <h2> My Profile </h2>
-      <button type="button" class="btn btn-outline-success mt-5 mx-5">Messages</button>
-    <div>
-      <%= cl_image_tag current_user.avatar.key, style:"width:200px; height:200px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <h4> Profile description: </h4>
-      <p><%= current_user.profile_description %></p>
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <%= link_to "My profile", employer_profile_path, class: "nav-link active" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My posts", my_posts_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Pending job applications", job_applications_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My calendar</a>
+    </li>
+  </ul>
+  <div class="user-profile">
+    <div class="row">
+      <div class="col-6">
+        <%= cl_image_tag current_user.avatar.key, style:"width:400px; height:400px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5  ", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      </div>
+      <div class="col-6 mt-5 mb-5">
+        <div class="content">
+          <h1><%= current_user.nickname %></h1>
+            <div class="profile-description">
+              <h3>About the company: </h3>
+              <p style="font-size: 20px;"><%= current_user.profile_description %></p>
+            </div>
+          <div class="d-flex">
+            <%= link_to "My messages", chatrooms_path, class: "card-button mb-3 mt-3 mx-3", style: "width: 200px;" %>
+            <button type="button" class="search-button mb-3 mt-3" , style="width: 200px;">My appointments</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <h4> My calendar </h4>
-    </div>
-
-    <div>
-      <h4> My current Job Postings </h4>
-    <% current_user.jobs.each do |job| %>
-      <h4><%= job.position %></h4>
-      <%= link_to "Show Job Position", job_path(job) %>
-      <%= link_to "Edit this Job Position", edit_job_path(job) %>
-      <%= link_to "Delete this Job Position", job_path(job) %>
-    <% end %>
-    </div>
-
-
-
-    <button type="button" class="btn btn-outline-success mt-5">
-      <%= link_to "My pending job applications", job_applications_path %>
-    </button>
-
+  </div>
 </div>

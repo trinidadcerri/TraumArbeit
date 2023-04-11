@@ -1,3 +1,4 @@
+<div class="container">
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <%= link_to "My profile", dashboard_path, class: "nav-link active" %>
@@ -6,17 +7,30 @@
    <%= link_to "My favorites", favorites_path, class: "nav-link" %>
   </li>
   <li class="nav-item">
-    <%= link_to "My Cvs", cvs_path, class: "nav-link" %>
+    <%= link_to "My CVs", cvs_path, class: "nav-link" %>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My calendar</a>
+    <%= link_to "My calendar", calendar_path, class: "nav-link" %>
   </li>
 </ul>
 <div class="user-profile">
-<%= cl_image_tag current_user.avatar.key, style:"width:200px; height:200px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-<div class="profile-description"> About me:
-<%= current_user.profile_description %>
+<div class="row">
+<div class="col-6">
+<%= cl_image_tag current_user.avatar.key, style:"width:400px; height:400px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5  ", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 </div>
-<button type="button" class="btn btn-outline-success mt-5 mx-5">Messages</button>
-<button type="button" class="btn btn-outline-success mt-5">My pending appointments</button>
+<div class="col-6 mt-5 mb-5">
+<div class="content">
+<h1>Hi, my name is <%= current_user.first_name %> <%=current_user.last_name %>!</h1>
+<div class="profile-description">
+<h3>About me:</h3>
+<p style="font-size: 20px;"><%= current_user.profile_description %></p>
+<div class="d-flex">
+<%= link_to "My messages", chatrooms_path, class: "card-button mb-3 mt-3 mx-3", style: "width: 200px;" %>
+<%= link_to "My appointments", calendar_path, class: "search-button mb-3 mt-3", style: "width: 200px;" %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>

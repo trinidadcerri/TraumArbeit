@@ -1,8 +1,13 @@
+<div class="main-container">
         <%= simple_form_for @job do |f| %>
           <%= f.input :position, placeholder: 'Job position' %>
           <%= f.input :description, placeholder: 'Job description' %>
           <%= f.input :salary, placeholder: 'Salary for the position' %>
           <%= f.input :level, placeholder: 'Job entry Level' %>
           <%= f.input :address, placeholder: 'Job location' %>
-          <%= f.submit class: 'btn btn-secondary' %>
+          <%= f.submit class: 'form-button' %>
         <% end %>
+        <div style="margin-top:1%; ">
+        <%= link_to "Return to Candidate's list", candidates_path, class: 'form-button'%>
+        </div>
+</div>

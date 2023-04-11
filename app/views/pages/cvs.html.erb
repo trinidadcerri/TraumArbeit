@@ -1,9 +1,32 @@
-    <div class="h1">My Cvs </div>
+<div class="container">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to "My profile", dashboard_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+   <%= link_to "My favorites", favorites_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "My CVs", cvs_path, class: "nav-link active" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "My calendar", calendar_path, class: "nav-link" %>
+  </li>
+</ul>
       <% if current_user.cvs != [] %>
         <% current_user.cvs.each do |cv| %>
           <div>
             <% cv.url %>
-            <iframe src="<%= cv.url %>" width="50%" height="710"></iframe>
+            <iframe src="<%= cl_image_path(cv.key, secure: true) %>"
+            style="
+                      display: block;
+                      margin: 0 auto;
+                      border: 1px solid #ccc;
+                      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                      height: 470px;
+                      margin-top: 20px;">
+            </iframe>
           </div>
         <% end %>
       <% end %>
+</div>
