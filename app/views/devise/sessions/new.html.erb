@@ -1,7 +1,6 @@
-<div class="login-signup-body">
 	<div class="login-signup-form-container">
-    <h2>Log in</h2>
-      <div class="login-signup-form">
+    <div class="login-signup-form">
+      <h2>Log in</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
         <div class="login-signup-inputs">
           <%= f.input :email,
@@ -23,4 +22,3 @@
     </div>
     <%= render "devise/shared/links" %>
   </div>
-</div>
