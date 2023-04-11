@@ -1,59 +1,61 @@
-.candidates-container{
+.candidates-container {
   display: flex;
-  width: 100%;
-  overflow: hidden;
-  padding: 80px 0;
-
-}
-.candidates-container .candidates-main-card{
-  display: flex;
-  justify-content: space-evenly;
-  width: 200%;
-  transition: 1s;
-}
-.candidates-container .candidates-main-card .candidates-cards{
-  margin: 0 20px;
-}
-.candidates-main-card .candidates-cards .candidates-card{
-  background: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-  transition: all 0.4s ease;
-}
-.candidates-main-card .candidates-cards .candidates-card:hover{
-  transform: translateY(-15px);
-}
-.candidates-cards .candidates-card .candidates-card-content{
-  width: 100%;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
-.candidates-cards .candidates-card .candidates-card-content .candidates-card-img{
+.candidate-card {
+  // position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin: 20px;
+}
+.candidate-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+.candidate-card-avatar {
+  display: block;
+  margin: 20px auto;
   height: 130px;
+  object-fit: cover;
   width: 130px;
   border-radius: 50%;
   padding: 3px;
   background: #36A9AE;
   margin-bottom: 14px;
-    img{
-      height: 100%;
-      width: 100%;
-      border: 3px solid #ffff;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+    // img{
+    //   height: auto;
+    //   // width: 100%;
+    //   border: 3px solid #ffff;
+    //   border-radius: 50%;
+    //   object-fit: cover;
+    // }
 }
-.candidates-card .candidates-card-content{
-  p {
-    font-size: 20px;
-    font-weight: 500;
-  }
+
+.candidate-card-details {
+	padding: 20px;
 }
-.candidates-card-button {
+.candidate-card-sub-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.candidate-card-sub-details i {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.candidate-card-btn {
+	// background-color: #333;
+	// color: #fff;
+	// padding: 10px 20px;
+	// border: none;
+	// border-radius: 20px
   background-color: #36A9AE;
   background-image: linear-gradient(#37ADB2, #329CA0);
   border: 1px solid #2A8387;
@@ -66,6 +68,7 @@
   font-size: 17px;
   line-height: 100%;
   margin: 0;
+
   outline: 0;
   padding: 11px 15px 12px;
   text-align: center;
