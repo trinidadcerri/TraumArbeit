@@ -13,9 +13,9 @@
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My calendar</a>
     </li>
   </ul>
-<h1>My Pending Job Applications</h1>
 <div class="cards main-container">
     <div class="py-5 mb-5">
+      <h1>My Pending Job Applications</h1>
       <div class="row justify-content-center">
         <% current_user.jobs.each do |job| %>
           <div class="col-12 col-lg-3">
@@ -23,9 +23,6 @@
               <%= image_tag "#{job.level}.jpg", class: "card-img-top", height: 200%>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-6">
-                      <%= link_to "Show", job_path(job), class: "card-button mb-3", style: "width: 100px" %>
-                    </div>
                     <div class="col-6">
                       <% current_user.job_applications.each do |job_application| %>
                         <li>
@@ -36,7 +33,7 @@
                           <% elsif job_application.status == "accepted" %>
                             <p>The job application was accepted</p>
                             <%= link_to "Decline", decline_path(job_application), class: "card-button mb-3", style: "width: 100px" %>
-                            <%= link_to "Make an appoiment", "#", class: "card-button mb-3", style: "width: 100px" %>
+                            <%= link_to "Make an appoiment", new_job_appointment_path(@job), class: "card-button mb-3", style: "width: 100px" %>
                             <%= link_to "Back to my profile", employer_profile_path, class: "card-button mb-3", style: "width: 100px" %>
                           <% end %>
                         </li>

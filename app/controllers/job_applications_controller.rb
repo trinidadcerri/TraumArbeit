@@ -2,7 +2,13 @@ class JobApplicationsController < ApplicationController
   before_action :set_app, only: [:show, :destroy]
 
   def index
-    @apps = JobApplication.all
+    ids = Job.where(user: current_user).pluck(:user_id, :id)
+    # raise
+    # @my_applicants = JobApplication.where(job_id: @ids[0]).where(user_id: @ids[1])
+    @my_applicants = ids.map do |idArray|
+
+      JobApplication.where(user_id: idArray[0]).where(job_id: idArray[1])
+    end
   end
 
   def show
