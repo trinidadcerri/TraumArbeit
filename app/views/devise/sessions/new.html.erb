@@ -1,6 +1,8 @@
 	<div class="login-signup-form-container">
-    <div class="login-signup-form">
+  <div class="login-signup-form-header">
+      <%= image_tag "logo2.jpg"  %>
       <h2>Log in</h2>
+  </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
         <div class="login-signup-inputs">
           <%= f.input :email,
@@ -19,6 +21,6 @@
         </div>
       <% end %>
 
-    </div>
+
     <%= render "devise/shared/links" %>
   </div>
