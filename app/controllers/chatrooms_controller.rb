@@ -2,6 +2,10 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = Chatroom.all
+    @job_application_ids = @chatrooms.map do |chatroom|
+      chatroom.job_application_id
+    end
+    @avatars = User.all
   end
 
   def show

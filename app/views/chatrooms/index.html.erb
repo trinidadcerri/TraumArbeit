@@ -2,6 +2,8 @@
  <h1 class="chatroom-header">Select the chat you want message:</h1>
  <ul class="chatroom-list">
   <% @chatrooms.each do |chatroom| %>
+  <%= User.all.where(JobApplication.all.where(chatroom.job_application_id)[0]) %>
+     <%= cl_image_tag current.avatar.key %>
       <li><%= link_to chatroom.name, chatroom_path(chatroom)%></li>
   <% end %>
  </ul>
