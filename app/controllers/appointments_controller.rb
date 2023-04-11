@@ -22,6 +22,20 @@ class AppointmentsController < ApplicationController
   def show
   end
 
+  def appointment_accept
+    @appointment = Appointment.find(params[:id])
+    @appointment.status = "accepted"
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
+  def appointment_decline
+    @appointment = Appointment.find(params[:id])
+    @appointment.status = "declined"
+    @appointment.save
+    redirect_to dashboard_path
+  end
+
   def destroy
     @appointment.destroy
     redirect_to calendar_path, status: :see_other

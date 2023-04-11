@@ -26,6 +26,20 @@ class JobApplicationsController < ApplicationController
     end
   end
 
+  def accept
+    @app = JobApplication.find(params[:id])
+    @app.status = "accepted"
+    @app.save
+    redirect_to employer_profile_path
+  end
+
+  def decline
+    @app = JobApplication.find(params[:id])
+    @app.status = "declined"
+    @app.save
+    redirect_to employer_profile_path
+  end
+
   def destroy
     @app.destroy
   end
