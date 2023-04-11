@@ -1,8 +1,11 @@
  <div class="container chatroom">
  <h1 class="chatroom-header">Select the chat you want message:</h1>
  <ul class="chatroom-list">
-  <% @chatrooms.each do |chatroom| %>
-      <li><%= link_to chatroom.name, chatroom_path(chatroom)%></li>
+  <% @chatrooms.each_with_index do |chatroom, index| %>
+      <li>
+  <%= cl_image_tag @usersX.avatar.key , :width => 40, :height => 40, style: "border-radius: 50%; display: block; margin-bottom: 10px;"%>
+  <%= link_to chatroom.name, chatroom_path(chatroom)%>
+  </li>
   <% end %>
  </ul>
 </div>
