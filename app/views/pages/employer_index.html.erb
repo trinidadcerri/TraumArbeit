@@ -37,29 +37,20 @@
   </div>
   <!--User cards-->
   <div class="candidates-container">
-    <div class="candidates-main-card">
-      <% @users.each do |user|%>
-      <div class="candidates-cards">
-        <div class="candidates-card">
-          <div class="candidates-card-content">
-            <div class="candidates-card-img">
-            <% if user.avatar.attached? %>
-              <%= cl_image_tag user.avatar.key %>
-            <% else %>
-              <h1>placeholder</h1>
-            <% end %>
-            </div>
-            <div class="candidates-card-details">
-              <p style="font-size: 20px";>
-                <%= user.first_name %> <br>
-                <%= user.last_name %>
-              </p>
-              <%= link_to "Open to work", candidate_path(user.id), class: "candidates-card-button"%>
-            </div>
-          </div>
+    <% @users.each do |user|%>
+    <div class="candidate-card">
+      <% if user.avatar.attached? %>
+        <%= cl_image_tag user.avatar.key, class:"candidate-card-avatar" %>
+      <% else %>
+        <h1>placeholder</h1>
+      <% end %>
+        <div class="candidate-card-details">
+          <h2><%= user.first_name %> <%= user.last_name %></h2>
+            <p><i class="fas fa-briefcase"></i>  <%= user.profesion %></p>
+            <p><i class="fas fa-map-marker-alt"></i>  <%= user.location %></p>
+            <%= link_to "Open to work", candidate_path(user.id), class: "candidate-card-btn"%>
         </div>
       </div>
-      <% end %>
+    <% end %>
     </div>
-  </div>
 </div>
