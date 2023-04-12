@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get '/dashboard', to: 'pages#dashboard'
+  get '*path', to: 'errors#not_found'
+
   resources :jobs do
     resources :appointments, only: [:new, :create, :show]
     resources :job_applications, only: [:new, :create, :show]
