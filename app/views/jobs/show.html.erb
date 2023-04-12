@@ -14,12 +14,14 @@
         <br>
     </p>
     <div class="d-flex">
-    <% if @job_application.length == 0 %>
+    <% if @job_application.length == 0 && current_user.job_seeker %>
       <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
       <% else %>
       <%= nil %>
       <% end %>
+      <% if current_user.job_seeker %>
       <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
+      <% end %>
     </div>
   </div>
 </div>
