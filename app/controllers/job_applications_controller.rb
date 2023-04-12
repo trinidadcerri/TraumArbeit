@@ -9,7 +9,7 @@ class JobApplicationsController < ApplicationController
     @job = Job.find(params[:job_id])
     @application = JobApplication.new(job: @job, user: current_user)
 
-    @chatroom = Chatroom.new(name: @job.user.first_name)
+    @chatroom = Chatroom.new(employer_name: @job.user.first_name, applicant_name: current_user.first_name)
     @chatroom.job_application = @application
     @chatroom.save
   end
