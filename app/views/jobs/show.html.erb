@@ -15,16 +15,16 @@
     </p>
     <div class="d-flex">
     <% if current_user %>
-    <% if @job_application.length == 0 && current_user.job_seeker %>
-      <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
+      <% if @job_application.length == 0 && current_user.job_seeker %>
+        <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
       <% else %>
-      <%= nil %>
+        <%= nil %>
       <% end %>
       <% if current_user.job_seeker %>
-      <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
+        <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
       <% end %>
       <% else %>
-      <button>log in to apply</button>
+        <button class="card-button mx-3", style="width: 200px;">Login to apply</button>
       <% end %>
     </div>
   </div>
