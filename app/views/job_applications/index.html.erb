@@ -17,13 +17,13 @@
   <div class="py-5 mb-5">
     <h1>My Pending Job Applications</h1>
       <div class="row justify-content-center">
-      <% @my_applicants.job_applications.each do |application| %>
+      <% @jobs.job_applications.each do |application| %>
             <li>
-              <p><%= job_application.user.nickname %> wants to apply for this job position: </p>
-              <% if job_application.status == "pending" %>
+              <p><%= @jobs.job_application.user.nickname %> wants to apply for this job position: </p>
+              <% if @jobs.job_application.status == "pending" %>
                 <%= link_to "Accept", accept_path(job_application), class: "card-button mb-3", style: "width: 100px" %>
                 <%= link_to "Decline", decline_path(job_application), class: "card-button mb-3", style: "width: 100px" %>
-              <% elsif job_application.status == "accepted" %>
+              <% elsif @jobs.job_application.status == "accepted" %>
                 <p>The job application was accepted</p>
                 <%= link_to "Decline", decline_path(job_application), class: "card-button mb-3", style: "width: 100px" %>
                 <%= link_to "Make an appoiment", new_job_appointment_path(@job), class: "card-button mb-3", style: "width: 100px" %>
