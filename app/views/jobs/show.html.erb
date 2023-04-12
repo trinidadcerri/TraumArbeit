@@ -14,18 +14,13 @@
         <br>
     </p>
     <div class="d-flex">
-    <% if current_user %>
-      <% if @job_application.length == 0 && current_user.job_seeker %>
+      <% if   current_user.present? %>
         <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
-      <% else %>
-        <%= nil %>
-      <% end %>
-      <% if current_user.job_seeker %>
         <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
-      <% end %>
-      <% else %>
-        <button class="card-button mx-3", style="width: 200px;">Login to apply</button>
-      <% end %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "card-button", style: "width: 200px;"  %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "card-button mx-5", style: "width: 200px;"  %>
+        <% end %>
     </div>
   </div>
 </div>
