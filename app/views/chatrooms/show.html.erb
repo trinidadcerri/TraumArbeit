@@ -5,7 +5,11 @@
   <div class="messages"
   data-chatroom-subscription-target="messages"
   >
-  <h1 style="text-align: center;"> Chatroom with # <%= @chatroom.name %></h1>
+  <% if current_user.first_name == @chatroom.employer_name %>
+  <h1 style="text-align: center;"> Chatroom with # <%= @chatroom.applicant_name %></h1>
+  <% else %>
+  <h1 style="text-align: center;"> Chatroom with # <%= @chatroom.employer_name %></h1>
+  <% end %>
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
