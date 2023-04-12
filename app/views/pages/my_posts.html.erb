@@ -15,6 +15,7 @@
   </ul>
   <div class="cards main-container">
     <div class="py-5 mb-5">
+      <h1>My posted jobs</h1>
       <div class="row justify-content-center">
         <% current_user.jobs.each do |job| %>
           <div class="col-12 col-lg-3">
@@ -34,10 +35,7 @@
                     </div>
                   </div>
                   <h5 class="card-title"><%= job.position %></h5>
-                  <p class="card-text">Salary: <%= job.salary %> Euro</p>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,256L48,256C96,256,192,256,288,245.3C384,235,480,213,576,181.3C672,149,768,107,864,112C960,117,1056,171,1152,186.7C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-                <a href=""><i class="fas fa-euro-sign euro-icon"></i></a>
               </div>
             </div>
           <% end %>
