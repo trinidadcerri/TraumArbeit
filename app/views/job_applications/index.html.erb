@@ -18,15 +18,32 @@
     <h1>My Pending Job Applications</h1>
       <div class="row justify-content-center">
         <% @my_applications.each do |application| %>
-          <% job_application = JobApplication.find_by(job_id: application.id) %>
-          <%= application.position %>
-          <%= job_application.status %>
-          <% if job_application.pending? %>
-            <%= link_to "accepted", accept_path(job_application.id) %>
-          <% elsif job_application.accepted? %>
-            <%= link_to "declined", decline_path(job_application.id) %>
-          <% end %>
-        <% end %>
+        <% job_application = JobApplication.find_by(job_id: application.id) %>
+          <div class="col-12 col-lg-3">
+              <div class="card box-shadow my-3">
+                <%= image_tag "logo2.jpg", class: "card-img-top", height: 200%>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-6">
+                    <% if job_application.pending? %>
+                      <p> User_name wants to apply for this job position: Job_position</p>
+                      <%= link_to "Accept", accept_path(job_application.id), class: "card-button mb-3", style: "width: 100px" %>
+                    </div>
+                    <div class="col-6">
+                    <% elsif job_application.accepted? %>
+                      <p>The job application was accepted</p>
+                      <%= link_to "Decline", decline_path(job_application.id), class: "card-button mb-3", style: "width: 100px" %>
+                      <%= link_to "Make an appoiment", new_job_appointment_path(job_application.id), class: "card-button mb-3", style: "width: 100px" %>
+                    <% elsif job_application.declined? %>
+                      <p>The job application was declined</p>
+                    <% end %>
+                    </div>
+                  </div>
+                  <h5 class="card-title"><%= application.position %> <%= job_application.status %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>
