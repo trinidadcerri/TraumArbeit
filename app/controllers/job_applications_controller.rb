@@ -2,7 +2,8 @@ class JobApplicationsController < ApplicationController
   before_action :set_app, only: [:show, :destroy]
 
   def index
-    @apps = JobApplication.all
+    @jobs = current_user.jobs.includes(:job_applications)
+    raise
   end
 
   def show
