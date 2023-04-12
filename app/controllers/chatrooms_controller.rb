@@ -2,6 +2,9 @@ class ChatroomsController < ApplicationController
 
   def index
     @chatrooms = Chatroom.all
+    @job_ids = @chatrooms.map {|chatroom| JobApplication.where(id:chatroom.job_application.id)[0]}.pluck(:job_id)
+    @user_ids = Job.where(id: @job_ids).pluck(:user_id)
+    @usersX = User.where(id: @user_ids)[0]
   end
 
   def show
