@@ -3,7 +3,6 @@ class JobApplicationsController < ApplicationController
 
   def index
     @jobs = current_user.jobs.includes(:job_applications)
-    raise
   end
 
   def show

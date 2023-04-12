@@ -11,7 +11,11 @@ class JobsController < ApplicationController
 
   def show
     @favorite = Favorite.new
-    @job_application = JobApplication.all.where(user_id: current_user.id).where(job_id: @job.id)
+    if @user.present?
+      @job_application = JobApplication.all.where(user_id: current_user.id).where(job_id: @job.id)
+    else
+      nil
+    end
   end
 
   def new
