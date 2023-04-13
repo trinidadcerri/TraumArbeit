@@ -22,19 +22,19 @@
               <div class="card box-shadow my-3">
               <%= image_tag "#{job.level}.jpg", class: "card-img-top", height: 200%>
                 <div class="card-body">
+                  <h5 class="card-title", style="text-align: center;" ><b><%= job.position %></b></h5>
                   <div class="row">
                     <div class="col-6">
-                      <%= link_to "Show", job_path(job), class: "card-button mb-3", style: "width: 100px" %>
+                      <%= link_to "Show", job_path(job), class: "button-success mb-3", style: "width: 100px" %>
                     </div>
                     <div class="col-6">
-                      <%= link_to "Edit", edit_job_path(job), class: "card-button mb-3", style: "width: 100px" %>
+                      <%= link_to "Edit", edit_job_path(job), class: "button-neutral mb-3", style: "width: 100px" %>
                     </div>
                     <div class="col-6">
                       <%= link_to "Delete", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                      class: "card-button mb-3", style: "width: 100px" %>
+                      class: "button-wrong mb-3", style: "width: 100px" %>
                     </div>
                   </div>
-                  <h5 class="card-title"><%= job.position %></h5>
                 </div>
               </div>
             </div>
