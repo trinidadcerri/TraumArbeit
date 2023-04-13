@@ -11,8 +11,7 @@
           <%= f.input :level, collection: [ 'IT', 'Medicine', 'Service', 'Design' ], :prompt => 'Select your industry' %>
           <%= f.input :address, placeholder: 'Job location' %>
   </div>
-          <div class="login-signup-submit">
-            <%= f.submit class: 'login-signup-submit' %>
-          </div>
+
+            <%= f.submit class: 'login-signup-submit', style:"width: 100%" %>
         <% end %>
 </div>
