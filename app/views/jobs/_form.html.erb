@@ -8,7 +8,7 @@
           <%= f.input :position, placeholder: 'Job position' %>
           <%= f.input :description, placeholder: 'Job description' %>
           <%= f.input :salary, placeholder: 'Salary for the position' %>
-          <%= f.input :level, collection: [ 'IT', 'Medicine', 'Service', 'Design' ], :prompt => 'Select your industry' %>
+          <%= f.input :level, :label => "Industry", collection: [ 'IT', 'Medicine', 'Service', 'Design' ], :prompt => 'Select your industry' %>
           <%= f.input :address, placeholder: 'Job location' %>
   </div>
 
