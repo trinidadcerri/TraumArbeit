@@ -13,12 +13,44 @@
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My calendar</a>
     </li>
   </ul>
-<div class="cards main-container">
-  <div class="py-5 mb-5">
-    <h1>My Pending Job Applications</h1>
-      <div class="row justify-content-center">
-
-      </div>
+  <div class="cards main-container">
+    <div class="py-5 mb-5">
+      <h1>My Pending Job Applications</h1>
+        <div class="row justify-content-center">
+          <% @my_applications.each do |application| %>
+          <% job_application = JobApplication.find_by(job_id: application.id) %>
+            <div class="col-12 col-lg-3">
+              <div class="card box-shadow my-3">
+                <%= image_tag "#{application.level}.jpg", class: "card-img-top", height: 200%>
+                <div class="card-body">
+                  <div class="row">
+                  <h5 class="card-title"><%= application.position %></h5>
+                  <p class="card-text"><%= job_application.user.first_name %> <%= job_application.user.last_name %> wants to apply</p>
+                  <p class="card-text">The request is <span style="background-color: <%= job_application.status == "pending" ? "green" : "yellow" %>"><%= job_application.status %></span></p>
+                    <% if job_application.pending? %>
+                    <div class="col-6">
+                      <%= link_to "Accept", accept_path(job_application.id), class: "card-button mb-3", style: "width: 120px" %>
+                    </div>
+                    <div class="col-6">
+                      <%= link_to "Decline", decline_path(job_application.id), class: "card-button mb-3", style: "width: 120px" %>
+                    </div>
+                    <div class="col-6">
+                      <%= link_to "See candidate", candidate_path(job_application.user.id), class: "card-button mb-3", style: "width: 120px" %>
+                    </div>
+                    <% elsif job_application.accepted? %>
+                    <div class="col-6">
+                      <%= link_to "Decline", decline_path(job_application.id), class: "card-button mb-3", style: "width: 120px" %>
+                    </div>
+                    <div class="col-6">
+                      <%= link_to "Make an appoiment", new_job_appointment_path(job_application.id), class: "card-button mb-3", style: "width: 120px" %>
+                    </div>
+                    <% end %>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
     </div>
   </div>
 </div>

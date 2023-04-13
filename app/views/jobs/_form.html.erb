@@ -1,13 +1,18 @@
-<div class="main-container">
+	<div class="login-signup-form-container">
+  <div class="login-signup-form-header">
+      <%= image_tag "logo2.jpg"  %>
+      <h2>Job Position</h2>
+  </div>
+  <div class="login-signup-inputs">
         <%= simple_form_for @job do |f| %>
           <%= f.input :position, placeholder: 'Job position' %>
           <%= f.input :description, placeholder: 'Job description' %>
           <%= f.input :salary, placeholder: 'Salary for the position' %>
-          <%= f.input :level, placeholder: 'Job entry Level' %>
+          <%= f.input :level, collection: [ 'IT', 'Medicine', 'Service', 'Design' ], :prompt => 'Select your industry' %>
           <%= f.input :address, placeholder: 'Job location' %>
-          <%= f.submit class: 'form-button' %>
+  </div>
+          <div class="login-signup-submit">
+            <%= f.submit class: 'login-signup-submit' %>
+          </div>
         <% end %>
-        <div style="margin-top:1%; ">
-        <%= link_to "Return to Candidate's list", candidates_path, class: 'form-button'%>
-        </div>
 </div>

@@ -3,6 +3,9 @@ class JobApplicationsController < ApplicationController
 
   def index
     @jobs = current_user.jobs.includes(:job_applications)
+    @my_applications = @jobs.select do |job|
+      !job.job_applications.empty?
+    end
   end
 
   def show
@@ -30,14 +33,14 @@ class JobApplicationsController < ApplicationController
     @app = JobApplication.find(params[:id])
     @app.status = "accepted"
     @app.save
-    redirect_to employer_profile_path
+    redirect_to job_applications_path
   end
 
   def decline
     @app = JobApplication.find(params[:id])
     @app.status = "declined"
     @app.save
-    redirect_to employer_profile_path
+    redirect_to job_applications_path
   end
 
   def destroy
