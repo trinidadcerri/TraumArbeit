@@ -16,7 +16,11 @@
     <div class="d-flex">
       <% if   current_user.present? %>
         <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
+        <% if Favorite.find_by(job_id: @job.id, user_id: current_user.id)%>
+        <%= nil %>
+        <% else %>
         <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
+        <% end %>
         <% else %>
           <%= link_to "Login", new_user_session_path, class: "card-button", style: "width: 200px;"  %>
           <%= link_to "Sign Up", new_user_registration_path, class: "card-button mx-5", style: "width: 200px;"  %>
