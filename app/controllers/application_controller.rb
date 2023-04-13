@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    params[:url] || root_path
+    if current_user.job_seeker == false
+      candidates_path
+    else
+      params[:url] || root_path
+    end
   end
 
   def home_page?
