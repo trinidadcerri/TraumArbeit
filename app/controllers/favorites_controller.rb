@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
     @favorite.job = @job
     @favorite.user = current_user
     if @favorite.save
-      redirect_to favorites_path
+      redirect_to @job
     else
       render 'jobs/show', status: :unprocessable_entity
     end
@@ -22,10 +22,10 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.find(params[:id])
+    @job = @favorite.job_id
     if current_user == @favorite.user
-
       @favorite.destroy
-      redirect_to favorites_path, notice: 'Job position was successfully destroyed.'
+      redirect_to job_path(@job), notice: 'Job position was successfully destroyed.'
     else
       redirect_to favorites_path, alert: 'You are not authorized to perform this action.'
     end

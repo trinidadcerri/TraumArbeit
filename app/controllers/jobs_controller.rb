@@ -11,6 +11,7 @@ class JobsController < ApplicationController
 
   def show
     @favorite = Favorite.new
+    @check_favorite = Favorite.find_by(job_id: @job.id, user_id: current_user.id)
     if @user.present?
       @job_application = JobApplication.all.where(user_id: current_user.id).where(job_id: @job.id)
     else

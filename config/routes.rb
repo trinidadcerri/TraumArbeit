@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
   get '/cvs', to: 'pages#cvs'
   get '/calendar', to: 'pages#calendar'
+  get '/employer_calendar', to: 'pages#employer_calendar'
   resources :job_applications, only: [:index]
   resources :appointments, only: [:index]
   get '/candidates', to: 'pages#employer_index'
