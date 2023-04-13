@@ -32,6 +32,9 @@
                       <%= link_to "Accept", accept_path(job_application.id), class: "card-button mb-3", style: "width: 120px" %>
                     </div>
                     <div class="col-6">
+                      <%= link_to "Decline", decline_path(job_application.id), class: "card-button mb-3", style: "width: 120px" %>
+                    </div>
+                    <div class="col-6">
                       <%= link_to "See candidate", candidate_path(job_application.user.id), class: "card-button mb-3", style: "width: 120px" %>
                     </div>
                     <% elsif job_application.accepted? %>
