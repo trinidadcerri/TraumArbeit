@@ -16,6 +16,7 @@ class PagesController < ApplicationController
   end
 
   def candidates_show
+    @user = User.find(params[:id])
     if current_user.job_seeker == true
       redirect_to jobs_path, notice: "You are not authorized to access this page"
     end
