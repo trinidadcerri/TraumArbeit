@@ -15,7 +15,7 @@
     </p>
     <div class="d-flex">
       <% if   current_user.present? %>
-        <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;" %>
+        <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;", data: { turbo_confirm: "Are you sure you want to apply?" } %>
         <% if Favorite.find_by(job_id: @job.id, user_id: current_user.id)%>
         <%= nil %>
         <% else %>
