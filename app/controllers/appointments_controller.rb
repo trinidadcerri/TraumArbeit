@@ -14,7 +14,7 @@ class AppointmentsController < ApplicationController
     @job = Job.find(params[:job_id])
     @appointment = Appointment.new(appointment_params)
     @appointment.job = @job
-    @appointment.user = current_user
+    # @appointment.user = current_user
     @appointment.save!
       redirect_to calendar_path(@job, @appointment)
   end

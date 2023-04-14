@@ -2,17 +2,24 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users
   root to: "pages#home"
+
+  # Pages Controller, Here we need to place only the routes that are not related to a model
   get '/dashboard', to: 'pages#dashboard'
 
   resources :jobs do
-    resources :appointments, only: [:new, :create, :show]
     resources :job_applications, only: [:new, :create, :show]
-    resources :appointments, only: [:new, :create, :show]
-    resources :favorites, only: [:new, :create, :show]
+    resources :appointments, only: [:new, :create]
+    resources :favorites, only: [:new, :create]
   end
+  # Moved the show into their own routes, they are not nested anymore as they work indipendently from a job
+  resources :appointments, only: %i[show]
+  resources :favorites, only: %i[show]
+
+
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
   end
+
   resources :favorites, only: [:index]
   get '/cvs', to: 'pages#cvs'
   get '/calendar', to: 'pages#calendar'

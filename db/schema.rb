@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_14_100024) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_14_120040) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,13 +44,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_100024) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "date"
-    t.bigint "user_id", null: false
+    t.bigint "employer_id", null: false
     t.bigint "job_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.bigint "applicant_id", null: false
+    t.index ["applicant_id"], name: "index_appointments_on_applicant_id"
+    t.index ["employer_id"], name: "index_appointments_on_employer_id"
     t.index ["job_id"], name: "index_appointments_on_job_id"
-    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -125,7 +127,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_100024) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "jobs"
-  add_foreign_key "appointments", "users"
+  add_foreign_key "appointments", "users", column: "applicant_id"
+  add_foreign_key "appointments", "users", column: "employer_id"
   add_foreign_key "chatrooms", "job_applications"
   add_foreign_key "favorites", "jobs"
   add_foreign_key "favorites", "users"
