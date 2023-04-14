@@ -22,14 +22,14 @@ class AppointmentsController < ApplicationController
   def show
   end
 
-  def appointment_accept
+  def accept
     @appointment = Appointment.find(params[:id])
     @appointment.status = "accepted"
     @appointment.save
     redirect_to dashboard_path
   end
 
-  def appointment_decline
+  def decline
     @appointment = Appointment.find(params[:id])
     @appointment.status = "declined"
     @appointment.save

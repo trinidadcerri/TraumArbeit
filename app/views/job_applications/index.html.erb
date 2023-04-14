@@ -29,10 +29,10 @@
                   <p class="card-text", style="text-align: center;">The request is <span style="color: <%= job_application.status == "pending" ? "red" : "pink" %>"><%= job_application.status %></span></p>
                     <% if job_application.pending? %>
                     <div class="col-6 ">
-                      <%= link_to "Accept", accept_path(job_application.id), class: "button-success mb-3", style: "width: 120px" %>
+                      <%= link_to "Accept", accept_job_application_path(job_application), class: "button-success mb-3", style: "width: 120px" %>
                     </div>
                     <div class="col-6">
-                      <%= link_to "Decline", decline_path(job_application.id), class: "button-wrong mb-3", style: "width: 120px" %>
+                      <%= link_to "Decline", decline_job_application_path(job_application), class: "button-wrong mb-3", style: "width: 120px" %>
                     </div>
                     <div class="col-6">
                       <%= link_to "See candidate", candidate_path(job_application.user.id), class: "button-neutral mb-3", style: "width: 120px" %>
