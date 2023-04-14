@@ -15,11 +15,16 @@
     </p>
     <div class="d-flex">
       <% if   current_user.present? %>
-        <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button", style: "width: 200px;", data: { turbo_confirm: "Are you sure you want to apply?" } %>
-        <% if Favorite.find_by(job_id: @job.id, user_id: current_user.id)%>
-        <%= nil %>
+        <%= button_to "Apply for this job", job_job_applications_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
+        <% if @check_favorite %>
+        <%= link_to(favorite_path(@check_favorite),  data: {turbo_method: :delete}) do %>
+          <div class="favorite-icon"><i class="fa-solid fa-heart fa-2x"></i></div>
+        <% end %>
         <% else %>
-        <%= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
+               <%#= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
+        <%= link_to(job_favorites_path(@job), data: {turbo_method: :post}) do %>
+          <div class="favorite-icon"><i class="fa-regular fa-heart fa-2x"></i></div>
+        <% end %>
         <% end %>
       <% elsif current_user.present? && current_user.job_seeker == false %>
         <%= link_to "Back to my profile", employer_profile_path, class: "card-button", style: "width: 200px;"  %>
