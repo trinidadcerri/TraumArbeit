@@ -1,53 +1,30 @@
 <div class="main-container">
 <!--Search bar-->
-  <div class="search-bar mb-5">
+<div class="search-body">
+  <div class="search-container">
     <%= form_with url: candidates_path, method: :get, class: "d-flex ", style: "width:100%" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control input",
-        placeholder: "Looking for candidates...", class: "input",
+        placeholder: "Looking for candidates...", class: "search-input",
         style: "width:100%"
       %>
-    <%= submit_tag "Search", class: "search-button" ,  style: "margin-left: 5px"%>
+    <a class="search-btn">
+      <%= submit_tag "Search", class: "search-btn" ,  style: "margin-left: 5px"%>
     <% end %>
+    </a>
+      <i class="fas fa-search"></i>
   </div>
-<!--Carrousel-->
-  <div class="dream-job-picture mt-3">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="<%= image_url("dream_job.jpg") %>" class="d-block w-100" height=700 alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="<%= image_url("dream_job2.jpg")%>" class="d-block w-100" height=700 alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="<%= image_url("dream_job3.jpg") %>" class="d-block w-100" height=700 alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
   </div>
   <!--User cards-->
   <div class="candidates-container">
     <% @users.each do |user|%>
     <div class="candidate-card">
-      <% if user.avatar.attached? %>
-        <%= cl_image_tag user.avatar.key, class:"candidate-card-avatar" %>
-      <% else %>
-        <h1>placeholder</h1>
-      <% end %>
+      <%= image_tag "Male_avatar.png", class: "candidate-card-avatar" %>
         <div class="candidate-card-details">
-          <h2><%= user.first_name %> <%= user.last_name %></h2>
-            <p><i class="fas fa-briefcase"></i>  <%= user.profesion %></p>
-            <p><i class="fas fa-map-marker-alt"></i>  <%= user.location %></p>
+          <h2 style="margin-bottom: 15px;"><%= user.first_name %> <%= user.last_name %></h2>
+            <p><i class="fas fa-briefcase"></i>  <span style="background-color: yellow;"><%= user.profesion %></span></p>
+            <p style="margin-bottom: 0rem;"><i class="fas fa-map-marker-alt"></i>  <%= user.location %></p>
             <%= link_to "Open to work", candidate_path(user.id), class: "candidate-card-btn"%>
         </div>
       </div>

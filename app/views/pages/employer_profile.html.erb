@@ -16,7 +16,11 @@
   <div class="user-profile">
     <div class="row">
       <div class="col-6">
+      <% if current_user.avatar.attached? %>
         <%= cl_image_tag current_user.avatar.key, style:"width:400px; height:400px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5  ", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% else %>
+        <%= image_tag "/home/trinidad/code/trinidadcerri/TraumArbeit/app/assets/images/Male_avatar.png", style:"width:400px; height:400px; object-fit:cover;", class: "avatar dropdown-toggle mt-5 mb-5  ", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+      <% end %>
       </div>
       <div class="col-6 mt-5 mb-5">
         <div class="content">
