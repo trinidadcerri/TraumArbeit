@@ -3,12 +3,11 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="card">
           <div class="rounded-top text-white d-flex flex-row" style="background-color: #36A9AE; height:200px;">
-            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-                <%= cl_image_tag @user.avatar.key, class:"img-fluid img-thumbnail mt-4 mb-2", height: 80, width: 150 %>
+            <div style="margin-left: 20px;">
+                <%= cl_image_tag @user.avatar.key, class:"candidate-top-avatar img-thumbnail mt-4 mb-2" %>
             </div>
-            <div class="ms-3" style="margin-top: 130px;">
-              <h5><%= @user.first_name %> <%= @user.last_name %></h5>
-              <p>Candidate <%= @user.id %></p>
+            <div class="ms-3" style="margin-top: 150px;">
+              <h3><%= @user.first_name %> <%= @user.last_name %></h3>
             </div>
           </div>
           <div class="card-body p-4 text-black">
@@ -26,7 +25,7 @@
               <% @user.cvs.each do |cv| %>
               <div class="col mb-2">
               <% cv.url %>
-                  <iframe src="<%= cl_image_path(cv.key, secure: true) %>" width="50%" height="500"></iframe>
+                  <iframe src="<%= cl_image_path(cv.key, secure: true) %>" width="70%" height="650"></iframe>
               </div>
               <% end %>
             </div>
