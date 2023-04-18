@@ -15,50 +15,50 @@ Appointment.destroy_all
 ########### Job Seekers
 puts "Creating job seekers..."
 ### Jobseeker 1
-maria_gutierrez = {email: "maria_gutierrez@example.com", password: "123456", first_name: "Maria", last_name: "Gutierrez", job_seeker: true, profile_description: "Energetic and passionate college student working towards a communications degree at Murrayfield School of Marketing. Aiming to use skills in writing, photography, desktop publishing, and public relations at a summer internship at Schuester Digital Media Group.", nickname: "Maria", profesion: "Student", location: "Berlin" }
+maria_gutierrez = {gender: "female", email: "maria_gutierrez@example.com", password: "123456", first_name: "Maria", last_name: "Gutierrez", job_seeker: true, profile_description: "Energetic and passionate college student working towards a communications degree at Murrayfield School of Marketing. Aiming to use skills in writing, photography, desktop publishing, and public relations at a summer internship at Schuester Digital Media Group.", nickname: "Maria", profesion: "Student", location: "Berlin" }
 first_jobseeker = User.create(maria_gutierrez)
 first_jobseeker.avatar.attach(io: File.open("app/assets/images/maria_gutierrez_photo.jpg"), filename: first_jobseeker.last_name, content_type: "image/jpg")
 first_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/maria_gutierrez_cv.pdf"), filename: first_jobseeker.last_name, content_type: "application/pdf")
 first_jobseeker.save!
 ###
 ### Jobseeker 2
-reece_edwards = {email: "reece_edwards@example.com", password: "123456", first_name: "Reece", last_name: "Edwards", job_seeker: true, profile_description: "Empathic and responsible physician with 10+ years of experience in nurturing patient well-being and facility sustainability. Looking to provide healthcare excellence at The Penshaw Medical Center. At East Forge Medical, spearheaded and maintained Centurion City State accreditation.", nickname: "Reece", profesion: "Physician", location: "Berlin" }
+reece_edwards = {gender: "male", email: "reece_edwards@example.com", password: "123456", first_name: "Reece", last_name: "Edwards", job_seeker: true, profile_description: "Empathic and responsible physician with 10+ years of experience in nurturing patient well-being and facility sustainability. Looking to provide healthcare excellence at The Penshaw Medical Center. At East Forge Medical, spearheaded and maintained Centurion City State accreditation.", nickname: "Reece", profesion: "Physician", location: "Berlin" }
 second_jobseeker = User.create(reece_edwards)
 second_jobseeker.avatar.attach(io: File.open("app/assets/images/reece_edwards_photo.jpg"), filename: second_jobseeker.last_name, content_type: "image/jpg")
 second_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/reece_edwards_cv.pdf"), filename: second_jobseeker.last_name, content_type: "application/pdf")
 second_jobseeker.save!
 ### Jobseeker 3
-francois_mercer = {email: "francois_mercer@example.com", password: "123456", first_name: "Francois", last_name: "Mercer", job_seeker: true, profile_description: "I am a professional creative designer with 8 years of experience project management, advertisement, and computer aided design. Proven ability to transform client ideas into beautiful, functional design solutions.", nickname: "Francois", profesion: "Designer", location: "Berlin" }
+francois_mercer = {gender: "male", email: "francois_mercer@example.com", password: "123456", first_name: "Francois", last_name: "Mercer", job_seeker: true, profile_description: "I am a professional creative designer with 8 years of experience project management, advertisement, and computer aided design. Proven ability to transform client ideas into beautiful, functional design solutions.", nickname: "Francois", profesion: "Designer", location: "Berlin" }
 third_jobseeker = User.create(francois_mercer)
 third_jobseeker.avatar.attach(io: File.open("app/assets/images/francois_mercer_photo.jpg"), filename: third_jobseeker.last_name, content_type: "image/jpg")
 third_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/francois_mercer_cv.pdf"), filename: third_jobseeker.last_name, content_type: "application/pdf")
 third_jobseeker.save!
 ### Jobseeker 4
-sebastian_bennet = {email: "sebastian_bennet@example.com", password: "123456", first_name: "Sebastian", last_name: "Bennet", job_seeker: true, profile_description: "High-performing psychology major eager to join an innovative organization like Austen Tech, where I can apply my human resources knowledge and skills in a startup environment.", nickname: "Sebastian", profesion: "Psychology", location: "Berlin" }
+sebastian_bennet = {gender: "male", email: "sebastian_bennet@example.com", password: "123456", first_name: "Sebastian", last_name: "Bennet", job_seeker: true, profile_description: "High-performing psychology major eager to join an innovative organization like Austen Tech, where I can apply my human resources knowledge and skills in a startup environment.", nickname: "Sebastian", profesion: "Psychology", location: "Berlin" }
 fourth_jobseeker = User.create(sebastian_bennet)
 fourth_jobseeker.avatar.attach(io: File.open("app/assets/images/sebastian_bennet_photo.jpg"), filename: fourth_jobseeker.last_name, content_type: "image/jpg")
 fourth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/sebastian_bennet_cv.pdf"), filename: fourth_jobseeker.last_name, content_type: "application/pdf")
 fourth_jobseeker.save!
 ### Jobseeker 5
-olivia_wilson = {email: "olivia_wilson@example.com", password: "123456", first_name: "Olivia", last_name: "Wilson", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Olivia", profesion: "Digital Marketing", location: "Berlin" }
+olivia_wilson = {gender: "female", email: "olivia_wilson@example.com", password: "123456", first_name: "Olivia", last_name: "Wilson", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Olivia", profesion: "Digital Marketing", location: "Berlin" }
 fifth_jobseeker = User.create(olivia_wilson)
 fifth_jobseeker.avatar.attach(io: File.open("app/assets/images/olivia_wilson_photo.jpg"), filename: fifth_jobseeker.last_name, content_type: "image/jpg")
 fifth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/olivia_wilson_cv.pdf"), filename: fifth_jobseeker.last_name, content_type: "application/pdf")
 fifth_jobseeker.save!
 ### Jobseeker 6
-olga_iuzvyshyna = {email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Full-Stack Developer", location: "Berlin" }
+olga_iuzvyshyna = {gender: "female", email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Full-Stack Developer", location: "Berlin" }
 sixth_jobseeker = User.create(olga_iuzvyshyna)
 sixth_jobseeker.avatar.attach(io: File.open("app/assets/images/Olga_Iuzvyshyna_photo.jpg"), filename: sixth_jobseeker.last_name, content_type: "image/jpg")
 sixth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Olga_Iuzvyshyna_cv.pdf"), filename: sixth_jobseeker.last_name, content_type: "application/pdf")
 sixth_jobseeker.save!
 ### Jobseeker 7
-trinidad_cerri = {email: "trinidad_cerri@example.com", password: "123456", first_name: "Trinidad", last_name: "Cerri", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Trinidad", profesion: "Full-Stack Developer", location: "Berlin" }
+trinidad_cerri = {gender: "female", email: "trinidad_cerri@example.com", password: "123456", first_name: "Trinidad", last_name: "Cerri", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Trinidad", profesion: "Full-Stack Developer", location: "Berlin" }
 seventh_jobseeker = User.create(trinidad_cerri)
 seventh_jobseeker.avatar.attach(io: File.open("app/assets/images/CERRI - PHOTO.jpg"), filename: seventh_jobseeker.last_name, content_type: "image/jpg")
 seventh_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Maria_Trinidad_cv.pdf"), filename: seventh_jobseeker.last_name, content_type: "application/pdf")
 seventh_jobseeker.save!
 ### Jobseeker 8
-rodrigo_hoffman = {email: "rodrigo_hoffman@example.com", password: "123456", first_name: "Rodrigo", last_name: "Hoffman", job_seeker: true, profile_description: "I’m a Business Administration professional with 7+ years of experience. I worked in several positions and industries, which helped me to develop a broad vision in organizations. Originally from Chile, I moved to Germany to pursue a master’s degree and keep growing personally and professionally. However, not long ago I discovered my passion, and that is coding. I’m excited to begin the Full Stack Development program and to begin the next chapter of my life.", nickname: "Rodrigo", profesion: "Project Manager", location: "Berlin" }
+rodrigo_hoffman = {gender: "male", email: "rodrigo_hoffman@example.com", password: "123456", first_name: "Rodrigo", last_name: "Hoffman", job_seeker: true, profile_description: "I’m a Business Administration professional with 7+ years of experience. I worked in several positions and industries, which helped me to develop a broad vision in organizations. Originally from Chile, I moved to Germany to pursue a master’s degree and keep growing personally and professionally. However, not long ago I discovered my passion, and that is coding. I’m excited to begin the Full Stack Development program and to begin the next chapter of my life.", nickname: "Rodrigo", profesion: "Project Manager", location: "Berlin" }
 eighth_jobseeker = User.create(rodrigo_hoffman)
 eighth_jobseeker.avatar.attach(io: File.open("app/assets/images/rodrigo_hoffman_photo.jpg"), filename: eighth_jobseeker.last_name, content_type: "image/jpg")
 eighth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/rodrigo_hoffman_cv.pdf"), filename: eighth_jobseeker.last_name, content_type: "application/pdf")

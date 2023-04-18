@@ -9,18 +9,21 @@
         placeholder: "Looking for candidates...", class: "search-input",
         style: "width:100%"
       %>
-    <a class="search-btn">
-      <%= submit_tag "Search", class: "search-btn" ,  style: "margin-left: 5px"%>
+<button type="submit" class="search-btn" style="margin-left: 5px">
+  <i class="fas fa-search"></i>
+</button>
     <% end %>
-    </a>
-      <i class="fas fa-search"></i>
   </div>
   </div>
   <!--User cards-->
   <div class="candidates-container">
     <% @users.each do |user|%>
     <div class="candidate-card">
+    <% if user.gender == "male" %>
       <%= image_tag "Male_avatar.png", class: "candidate-card-avatar" %>
+    <% else %>
+      <%= image_tag "Female_avatar.png", class: "candidate-card-avatar" %>
+    <% end %>
         <div class="candidate-card-details">
           <h2 style="margin-bottom: 15px;"><%= user.first_name %> <%= user.last_name %></h2>
             <p><i class="fas fa-briefcase"></i>  <span style="background-color: yellow;"><%= user.profesion %></span></p>
