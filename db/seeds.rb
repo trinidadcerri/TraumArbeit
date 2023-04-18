@@ -44,7 +44,7 @@ fifth_jobseeker.avatar.attach(io: File.open("app/assets/images/olivia_wilson_pho
 fifth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/olivia_wilson_cv.pdf"), filename: fifth_jobseeker.last_name, content_type: "application/pdf")
 fifth_jobseeker.save!
 ### Jobseeker 6
-olga_iuzvyshyna = {email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Backend Developer", location: "Berlin" }
+olga_iuzvyshyna = {email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Full-Stack Developer", location: "Berlin" }
 sixth_jobseeker = User.create(olga_iuzvyshyna)
 sixth_jobseeker.avatar.attach(io: File.open("app/assets/images/Olga_Iuzvyshyna_photo.jpg"), filename: sixth_jobseeker.last_name, content_type: "image/jpg")
 sixth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Olga_Iuzvyshyna_cv.pdf"), filename: sixth_jobseeker.last_name, content_type: "application/pdf")
