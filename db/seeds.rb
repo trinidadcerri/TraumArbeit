@@ -10,6 +10,8 @@
 puts "Cleaning database..."
 Job.destroy_all
 User.destroy_all
+JobApplication.destroy_all
+Appointment.destroy_all
 ########### Job Seekers
 puts "Creating job seekers..."
 ### Jobseeker 1
