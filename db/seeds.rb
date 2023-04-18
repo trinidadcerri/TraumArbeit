@@ -44,13 +44,13 @@ fifth_jobseeker.avatar.attach(io: File.open("app/assets/images/olivia_wilson_pho
 fifth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/olivia_wilson_cv.pdf"), filename: fifth_jobseeker.last_name, content_type: "application/pdf")
 fifth_jobseeker.save!
 ### Jobseeker 6
-olga_iuzvyshyna = {email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Full-Stack Developer", location: "Berlin" }
+olga_iuzvyshyna = {email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Backend Developer", location: "Berlin" }
 sixth_jobseeker = User.create(olga_iuzvyshyna)
 sixth_jobseeker.avatar.attach(io: File.open("app/assets/images/Olga_Iuzvyshyna_photo.jpg"), filename: sixth_jobseeker.last_name, content_type: "image/jpg")
 sixth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Olga_Iuzvyshyna_cv.pdf"), filename: sixth_jobseeker.last_name, content_type: "application/pdf")
 sixth_jobseeker.save!
 ### Jobseeker 7
-trinidad_cerri = {email: "trinidad_cerri@example.com", password: "123456", first_name: "Trinidad", last_name: "Cerri", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Olivia", profesion: "Digital Marketing", location: "Berlin" }
+trinidad_cerri = {email: "trinidad_cerri@example.com", password: "123456", first_name: "Trinidad", last_name: "Cerri", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Trinidad", profesion: "Full-Stack Developer", location: "Berlin" }
 seventh_jobseeker = User.create(trinidad_cerri)
 seventh_jobseeker.avatar.attach(io: File.open("app/assets/images/CERRI - PHOTO.jpg"), filename: seventh_jobseeker.last_name, content_type: "image/jpg")
 seventh_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Maria_Trinidad_cv.pdf"), filename: seventh_jobseeker.last_name, content_type: "application/pdf")
