@@ -3,8 +3,8 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="card">
           <div class="rounded-top text-white d-flex flex-row" style="background-color: #36A9AE; height:200px;">
-            <div style="margin-left: 20px;">
-                <%= cl_image_tag @user.avatar.key, class:"candidate-top-avatar img-thumbnail mt-4 mb-2" %>
+            <div>
+                <%= cl_image_tag @user.avatar.key, class:"img-thumbnail mt-4 mb-2", style:"height:177px; width:150px;"%>
             </div>
             <div class="ms-3" style="margin-top: 150px;">
               <h3><%= @user.first_name %> <%= @user.last_name %></h3>

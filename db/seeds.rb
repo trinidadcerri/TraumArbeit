@@ -46,68 +46,78 @@ fifth_jobseeker.save!
 
 ########### Employers
 puts "Creating employers..."
-### Employer 1
-starbucks = {email: "starbucks@example.com", password: "123456", first_name: "Joseph", last_name: "Green", job_seeker: false, profile_description: "Starbucks Corporation is an American multinational chain of coffeehouses and roastery reserves headquartered in Seattle, Washington. It is the world's largest coffeehouse chain.", nickname: "Starbucks", profesion: "Recluiter", location: "Berlin" }
-first_employer = User.create(starbucks)
-first_employer.avatar.attach(io: File.open("app/assets/images/starbucks.png"), filename: first_employer.email, content_type: "image/png")
+### Employer 1 --> Medicine
+charite_berlin = {email: "charite_berlin@example.com", password: "123456", first_name: "Charite", last_name: "Berlin", job_seeker: false, profile_description: "Charité - Universitätsmedizin Berlin is a world-renowned institution of medical research, education and high-performance medicine and one of the largest hospitals in Europe. It combines both university research and teaching in its medical faculty and patient care in its university hospital. ", nickname: "Charite Berlin", profesion: "Recluiter", location: "Berlin" }
+first_employer = User.create(charite_berlin)
+first_employer.avatar.attach(io: File.open("app/assets/images/charite_berlin.png"), filename: first_employer.email, content_type: "image/png")
 first_employer.save!
-### Employer 2
-google = {email: "google@example.com", password: "123456", first_name: "James", last_name: "Late", job_seeker: false, profile_description: "Google is an American multinational technology company focusing on online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, artificial intelligence, and consumer electronics.", nickname: "Google", profesion: "Recluiter", location: "Berlin" }
-second_employer = User.create(google)
-second_employer.avatar.attach(io: File.open("app/assets/images/google.png"), filename: second_employer.email, content_type: "image/png")
+### Employer 2 --> Design
+design_company = {email: "design_company@example.com", password: "123456", first_name: "Design", last_name: "Company", job_seeker: false, profile_description: "TDC is a design consultancy specialising in Signage and Wayfinding, Environmental Graphics and Identity. We offer services from masterplanning and concept design through to tender documentation and installation supervision", nickname: "The Design Company", profesion: "Recluiter", location: "Berlin" }
+second_employer = User.create(design_company)
+second_employer.avatar.attach(io: File.open("app/assets/images/design_company.jpeg"), filename: second_employer.email, content_type: "image/png")
 second_employer.save!
+### Employer 3 --> IT
+mobi_team = {email: "mobi_team@example.com", password: "123456", first_name: "Mobi", last_name: "Team", job_seeker: false, profile_description: "Mobiteam does custom Web Design and Development. It is specialized in designing aesthetically beautiful and high-quality websites for corporate, personal and eCommerce. Our clients get websites that sell, attract and obtain market and customer’s respect.", nickname: "Mobi Team", profesion: "Recluiter", location: "Berlin" }
+third_employer = User.create(mobi_team)
+third_employer.avatar.attach(io: File.open("app/assets/images/mobi_team.png"), filename: third_employer.email, content_type: "image/png")
+third_employer.save!
+### Employer 4 --> Service
+starbucks = {email: "starbucks@example.com", password: "123456", first_name: "Starbucks", last_name: "Coffee Shop", job_seeker: false, profile_description: "Starbucks Corp (Starbucks) is a specialty coffee retailer. It roasts, markets, and retails specialty coffee. The company, through its stores, offers several blends of coffee, handcrafted beverages, merchandise, and food items.", nickname: "Starbucks", profesion: "Recluiter", location: "Berlin" }
+fourth_employer = User.create(starbucks)
+fourth_employer.avatar.attach(io: File.open("app/assets/images/starbucks.png"), filename: fourth_employer.email, content_type: "image/png")
+fourth_employer.save!
 
 ########### Jobs
 ##########
 puts "Creating jobs..."
 ##########
 ### Job 1
-frontend_job = {user: User.where(job_seeker: false).sample, position: "Front End Developer", salary: 3500, level: "IT", address: "Viktoria-Luise-Platz 5, 10777 Berlin", description: "Front end developer duties include determining the structure and design of web pages, striking a balance between functional and aesthetic design, and ensuring web design is optimized for smartphones" }
+frontend_job = {user: third_employer, position: "Front End Developer", salary: 3500, level: "IT", address: "Viktoria-Luise-Platz 5, 10777 Berlin", description: "Front end developer duties include determining the structure and design of web pages, striking a balance between functional and aesthetic design, and ensuring web design is optimized for smartphones" }
 first_job = Job.new(frontend_job)
 first_job.save!
 ### Job 2
-backend_job = {user: User.where(job_seeker: false).sample, position: "Back End Developer", salary: 4500, level: "IT", address: "Seumestraße 4, 10245 Berlin", description: "Backend developer responsibilities include creating, maintaining, testing, and debugging the entire back end of an application or system. This includes the core application logic, databases, data and application integration, API, and other processes taking place behind the scenes. A highly skilled back end developer is a programmer who knows how to analyze user needs to ensure a positive user experience"}
+backend_job = {user: third_employer, position: "Back End Developer", salary: 4500, level: "IT", address: "Seumestraße 4, 10245 Berlin", description: "Backend developer responsibilities include creating, maintaining, testing, and debugging the entire back end of an application or system. This includes the core application logic, databases, data and application integration, API, and other processes taking place behind the scenes. A highly skilled back end developer is a programmer who knows how to analyze user needs to ensure a positive user experience"}
 second_job = Job.new(backend_job)
 second_job.save!
 ### Job 3
-project_manager_job = {user: User.where(job_seeker: false).sample, position: "Project Manager", salary: 3000, level: "IT", address: "Viktoria-Luise-Platz 5, 10777 Berlin", description: "A project manager is responsible for planning and overseeing projects within an organisation, from the initial ideation through to completion. They coordinate people and processes to deliver projects on time, within budget and with the desired outcomes aligned to objectives"}
+project_manager_job = {user: third_employer, position: "Project Manager", salary: 3000, level: "IT", address: "Viktoria-Luise-Platz 5, 10777 Berlin", description: "A project manager is responsible for planning and overseeing projects within an organisation, from the initial ideation through to completion. They coordinate people and processes to deliver projects on time, within budget and with the desired outcomes aligned to objectives"}
 third_job = Job.create(project_manager_job)
 third_job.save!
 ### Job 4
-weitress_job = {user: User.where(job_seeker: false).sample, position: "Waitress", salary: 3000, level: "Service", address: "Sredzkistraße 1, 10435 Berlin", description: "The duties and responsibilities of a Waiter/Waitress include welcoming and seating guests, taking guest orders, communicating them effectively to the kitchen and in addition, memorizing the menu and offering recommendations to upsell appetizers, desserts, or drinks"}
+weitress_job = {user: fourth_employer, position: "Waitress", salary: 3000, level: "Service", address: "Sredzkistraße 1, 10435 Berlin", description: "The duties and responsibilities of a Waiter/Waitress include welcoming and seating guests, taking guest orders, communicating them effectively to the kitchen and in addition, memorizing the menu and offering recommendations to upsell appetizers, desserts, or drinks"}
 fourth_job = Job.create(weitress_job)
 fourth_job.save!
 ### Job 5
-vet_job = {user: User.where(job_seeker: false).sample, position: "Vet", salary: 1750, level: "Medicine", address: "Zossener Str. 44, 10961 Berlin", description: "A vet treat the injuries and illnesses of pets and other animals with a variety of medical equipment, including surgical tools and x-ray and ultrasound machines. They provide treatment for animals that is similar to the services a physician provides to humans"}
-fifth_job = Job.create(vet_job)
+perioperative_nurse_job = {user: first_employer, position: "Perioperative nurse", salary: 1750, level: "Medicine", address: "Zossener Str. 44, 10961 Berlin", description: "Perioperative nursing is a nursing specialty that works with patients who are having operative or other invasive procedures. Perioperative nurses work closely with surgeons, anaesthesiologists, nurse anaesthetists, surgical technologists, and nurse practitioners."}
+fifth_job = Job.create(perioperative_nurse_job)
 fifth_job.save!
 ### Job 6
-secretary_job = {user: User.where(job_seeker: false).sample, position: "Secretary", salary: 1250, level: "Service", address: "Wolfener Str. 33, 12681 Berlin", description: "A Secretary is a professional who provides behind-the-scenes work for an office. Their tasks include organizing files, preparing documents, managing office supply inventory and scheduling appointments"}
-sixth_job = Job.create(secretary_job)
+cashier_job = {user: fourth_employer, position: "Cashier", salary: 1250, level: "Service", address: "Wolfener Str. 33, 12681 Berlin", description: "Cashiers have many vital duties in retail-based establishments. They are responsible for processing and receiving payments and issuing receipts to customers as they leave with their purchases."}
+sixth_job = Job.create(cashier_job)
 sixth_job.save!
 ### Job 7
-graphic_designer_job = {user: User.where(job_seeker: false).sample, position: "Graphic Designer", salary: 2500, level: "Design", address: "Neumagener Str. 49, 13088 Berlin", description: "The Graphic Designer job description includes the entire process of defining requirements, visualizing and creating graphics including illustrations, logos, layouts and photos. You'll be the one to shape the visual aspects of websites, books, magazines, product packaging, exhibitions and more"}
+graphic_designer_job = {user: second_employer, position: "Graphic Designer", salary: 2500, level: "Design", address: "Neumagener Str. 49, 13088 Berlin", description: "The Graphic Designer job description includes the entire process of defining requirements, visualizing and creating graphics including illustrations, logos, layouts and photos. You'll be the one to shape the visual aspects of websites, books, magazines, product packaging, exhibitions and more"}
 seventh_job = Job.create(graphic_designer_job)
 seventh_job.save!
 ### Job 8
-english_teacher_job = {user: User.where(job_seeker: false).sample, position: "Graphic Designer", salary: 2500, level: "Design", address: "Gnomenpl. 14, 13088 Berlin", description: "English teachers are qualified professionals who teach reading, writing, and speaking skills to students. They teach students in Elementary, Middle, or High School, and plan and execute lessons according to a pre-set curriculum"}
-eighth_job = Job.create(english_teacher_job)
+interior_designer_job = {user: second_employer, position: "Interior Designer", salary: 2500, level: "Design", address: "Gnomenpl. 14, 13088 Berlin", description: "Professionals in this occupation work with interior spaces to improve the safety, functionality and aesthetic appeal of the area. They select color schemes, furniture, flooring, lighting and all other elements of a room or building. "}
+eighth_job = Job.create(interior_designer_job)
 eighth_job.save!
 ### Job 9
-nurse_job = {user: User.where(job_seeker: false).sample, position: "Nurse", salary: 1800, level: "Medicine", address: "Baerwaldstraße 16, 10961 Berlin", description: "A Nurse is responsible for supporting Physicians in administering patient care. Their duties include providing the correct dosage of medicine to patients, administering IVs based on their patients’ conditions and monitoring their patients’ vitals to ensure they have the proper blood pressure or heart rate"}
+nurse_job = {user: first_employer, position: "Nurse", salary: 1800, level: "Medicine", address: "Baerwaldstraße 16, 10961 Berlin", description: "A Nurse is responsible for supporting Physicians in administering patient care. Their duties include providing the correct dosage of medicine to patients, administering IVs based on their patients’ conditions and monitoring their patients’ vitals to ensure they have the proper blood pressure or heart rate"}
 ninth_job = Job.create(nurse_job)
 ninth_job.save!
 ### Job 10
-fullstack_job = {user: User.where(job_seeker: false).sample, position: "Full Stack Developer", salary: 5000, level: "IT", address: "Naunynstraße 33, 10999 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+fullstack_job = {user: third_employer, position: "Full Stack Developer", salary: 5000, level: "IT", address: "Naunynstraße 33, 10999 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
 tenth_job = Job.create(fullstack_job)
 tenth_job.save!
 ### Job 11
-barber_job = {user: User.where(job_seeker: false).sample, position: "Barber", salary: 2500, level: "Service", address: "Sonnnenalle 4, 10967 Berlin", description: "Shaving, trimming and shaping clients' beards and mustaches. Washing and conditioning clients' hair. Providing hair treatments and coloring. Ensuring that combs, scissors, razors, and other instruments are cleaned and sanitized after each use"}
-eleventh_job = Job.create(barber_job)
+barista_job = {user: fourth_employer, position: "Barista", salary: 2500, level: "Service", address: "Sonnnenalle 4, 10967 Berlin", description: "A Barista is a professional who makes and serves beverages such as coffee, tea and specialty beverages. They are responsible for taking customer orders and payments. "}
+eleventh_job = Job.create(barista_job)
 eleventh_job.save!
 ### Job 12
-security_job = {user: User.where(job_seeker: false).sample, position: "Guardian", salary: 2500, level: "Service", address: "Am Wriezener bhf, 10243 Berlin", description: "Protect, preserve, manage, and dispose of the estate according to law and for the best interest of the protected person. Use the protected person's estate for the proper care, maintenance, education, and support of the protected person and anyone to whom the protected person owes a legal duty of support"}
-twelfth_job = Job.create(security_job)
+cafe_support_manager_job = {user: fourth_employer, position: "Café Support Manager", salary: 2500, level: "Service", address: "Am Wriezener bhf, 10243 Berlin", description: "All new cafe/chef managers start training through our support team model. After training, the support manager may be assigned to their own café location. The support manager is responsible for the day-to-day operations of the café, including the hiring, training, and development of the café staff."}
+twelfth_job = Job.create(cafe_support_manager_job)
 twelfth_job.save!
 ##########
 puts "Finished!"
