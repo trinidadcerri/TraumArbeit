@@ -20,7 +20,7 @@
         <% current_user.jobs.each do |job| %>
           <div class="col-12 col-lg-3">
               <div class="card box-shadow my-3">
-              <%#= image_tag "#{job.level}.png", class: "card-img-top", height: 200 %>
+              <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200 %>
                 <div class="card-body">
                   <h5 class="card-title", style="text-align: center;" ><b><%= job.position %></b></h5>
                     <p class="card-title"> <i class="fa-solid fa-hand-holding-dollar"></i>  <%= job.salary %> </p>
