@@ -44,12 +44,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_120040) do
 
   create_table "appointments", force: :cascade do |t|
     t.date "date"
-    t.bigint "employer_id", null: false
     t.bigint "job_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.bigint "applicant_id", null: false
+    t.bigint "employer_id", null: false
     t.index ["applicant_id"], name: "index_appointments_on_applicant_id"
     t.index ["employer_id"], name: "index_appointments_on_employer_id"
     t.index ["job_id"], name: "index_appointments_on_job_id"

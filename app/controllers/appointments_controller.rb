@@ -6,17 +6,21 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @job = Job.find(params[:job_id])
+    @job_application = JobApplication.find(params[:job_application_id])
     @appointment = Appointment.new
   end
 
   def create
-    @job = Job.find(params[:job_id])
+    @job_application = JobApplication.find(params[:job_application_id])
     @appointment = Appointment.new(appointment_params)
-    @appointment.job = @job
-    # @appointment.user = current_user
-    @appointment.save!
+    @appointment.employer = current_user
+    @appointment.applicant = @job_application.user
+    @appointment.job = @job_application.job
+    if @appointment.save!
       redirect_to calendar_path(@job, @appointment)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show

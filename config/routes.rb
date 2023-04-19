@@ -14,16 +14,14 @@ Rails.application.routes.draw do
   get '/employer_calendar', to: 'pages#employer_calendar'
 
   resources :jobs do
-    resources :job_applications, only: [:new, :create, :show]
-    resources :appointments, only: [:new, :create]
     resources :favorites, only: [:new, :create]
   end
 
   # Moved the show into their own routes, they are not nested anymore as they work indipendently from a job
   resources :appointments, only: %i[show destroy] do
     member do
-      patch :accept
-      patch :decline
+      get :accept
+      get :decline
     end
   end
 
@@ -32,11 +30,12 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :job_applications, only: %i[index destroy] do
+  resources :job_applications, only: %i[index destroy create] do
+    resources :appointments, only: %i[new create]
     member do
       # Should be patch, and has now been nested in a member for job_applications
-      patch :accept
-      patch :decline
+      get :accept
+      get :decline
     end
   end
 end

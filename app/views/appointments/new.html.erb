@@ -1,6 +1,7 @@
-<div class="container"><%= simple_form_for  [@job, @appointment], data: { controller: 'flatpickr' } do |f| %>
-  <%= f.input :name %>
-  <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
-  <%= f.submit 'Schedule your appointment', class: "card-button"%>
+<div class="container">
+  <%= simple_form_for  [@job_application, @appointment], data: { controller: 'flatpickr' } do |f| %>
+    <%= f.input :name %>
+    <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } } %>
+    <%= f.submit 'Schedule your appointment', class: "card-button"%>
   <% end %>
 </div>

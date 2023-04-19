@@ -33,14 +33,14 @@ class PagesController < ApplicationController
   end
 
   def calendar
-    # @appointments = Appointment.all
     start_date = params.fetch(:date, Date.today).to_date
     @appointments = current_user.appointments.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    raise
   end
 
   def employer_calendar
     start_date = params.fetch(:date, Date.today).to_date
-    jobs_appointments = current_user.jobs.includes(:appointments).where(appointments: {date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week})
+    jobs_appointments = current_user.jobs.includes(:appointments).where(appointments: { date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week })
     @appointments = jobs_appointments.map(&:appointments).flatten
   end
 
