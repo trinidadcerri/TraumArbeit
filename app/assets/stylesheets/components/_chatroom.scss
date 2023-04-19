@@ -24,8 +24,7 @@
 
 /* Style for list items */
 .chatroom-list li {
-  display: flex;
-  align-items: center;
+  // display: flex;
   margin-bottom: 20px;
 }
 
@@ -49,4 +48,6 @@
 .chatroom-list li a:hover {
   border-color: #36A9AE;
 }
-
+.status {
+  text-align: end;
+}
