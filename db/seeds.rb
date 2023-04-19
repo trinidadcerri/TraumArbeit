@@ -96,17 +96,17 @@ frontend_job = {user: third_employer, position: "Front End Developer", salary: 3
 first_job = Job.new(frontend_job)
 first_job.save!
 ### Job 2
-backend_job = {user: third_employer, position: "Back End Developer", salary: 4500, level: "IT", address: "Seumestraße 4, 10245 Berlin", description: "Backend developer responsibilities include creating, maintaining, testing, and debugging the entire back end of an application or system. This includes the core application logic, databases, data and application integration, API, and other processes taking place behind the scenes. A highly skilled back end developer is a programmer who knows how to analyze user needs to ensure a positive user experience"}
-second_job = Job.new(backend_job)
-second_job.save!
+graphic_designer_job = {user: second_employer, position: "Graphic Designer", salary: 2500, level: "Design", address: "Neumagener Str. 49, 13088 Berlin", description: "The Graphic Designer job description includes the entire process of defining requirements, visualizing and creating graphics including illustrations, logos, layouts and photos. You'll be the one to shape the visual aspects of websites, books, magazines, product packaging, exhibitions and more"}
+seventh_job = Job.create(graphic_designer_job)
+seventh_job.save!
 ### Job 3
-project_manager_job = {user: third_employer, position: "Project Manager", salary: 3000, level: "IT", address: "Viktoria-Luise-Platz 5, 10777 Berlin", description: "A project manager is responsible for planning and overseeing projects within an organisation, from the initial ideation through to completion. They coordinate people and processes to deliver projects on time, within budget and with the desired outcomes aligned to objectives"}
-third_job = Job.create(project_manager_job)
-third_job.save!
-### Job 4
 weitress_job = {user: fourth_employer, position: "Waitress", salary: 3000, level: "Service", address: "Sredzkistraße 1, 10435 Berlin", description: "The duties and responsibilities of a Waiter/Waitress include welcoming and seating guests, taking guest orders, communicating them effectively to the kitchen and in addition, memorizing the menu and offering recommendations to upsell appetizers, desserts, or drinks"}
 fourth_job = Job.create(weitress_job)
 fourth_job.save!
+### Job 4
+nurse_job = {user: first_employer, position: "Nurse", salary: 1800, level: "Medicine", address: "Baerwaldstraße 16, 10961 Berlin", description: "A Nurse is responsible for supporting Physicians in administering patient care. Their duties include providing the correct dosage of medicine to patients, administering IVs based on their patients’ conditions and monitoring their patients’ vitals to ensure they have the proper blood pressure or heart rate"}
+ninth_job = Job.create(nurse_job)
+ninth_job.save!
 ### Job 5
 perioperative_nurse_job = {user: first_employer, position: "Perioperative nurse", salary: 1750, level: "Medicine", address: "Zossener Str. 44, 10961 Berlin", description: "Perioperative nursing is a nursing specialty that works with patients who are having operative or other invasive procedures. Perioperative nurses work closely with surgeons, anaesthesiologists, nurse anaesthetists, surgical technologists, and nurse practitioners."}
 fifth_job = Job.create(perioperative_nurse_job)
@@ -116,17 +116,17 @@ cashier_job = {user: fourth_employer, position: "Cashier", salary: 1250, level: 
 sixth_job = Job.create(cashier_job)
 sixth_job.save!
 ### Job 7
-graphic_designer_job = {user: second_employer, position: "Graphic Designer", salary: 2500, level: "Design", address: "Neumagener Str. 49, 13088 Berlin", description: "The Graphic Designer job description includes the entire process of defining requirements, visualizing and creating graphics including illustrations, logos, layouts and photos. You'll be the one to shape the visual aspects of websites, books, magazines, product packaging, exhibitions and more"}
-seventh_job = Job.create(graphic_designer_job)
-seventh_job.save!
+backend_job = {user: third_employer, position: "Back End Developer", salary: 4500, level: "IT", address: "Seumestraße 4, 10245 Berlin", description: "Backend developer responsibilities include creating, maintaining, testing, and debugging the entire back end of an application or system. This includes the core application logic, databases, data and application integration, API, and other processes taking place behind the scenes. A highly skilled back end developer is a programmer who knows how to analyze user needs to ensure a positive user experience"}
+second_job = Job.new(backend_job)
+second_job.save!
 ### Job 8
 interior_designer_job = {user: second_employer, position: "Interior Designer", salary: 2500, level: "Design", address: "Gnomenpl. 14, 13088 Berlin", description: "Professionals in this occupation work with interior spaces to improve the safety, functionality and aesthetic appeal of the area. They select color schemes, furniture, flooring, lighting and all other elements of a room or building. "}
 eighth_job = Job.create(interior_designer_job)
 eighth_job.save!
 ### Job 9
-nurse_job = {user: first_employer, position: "Nurse", salary: 1800, level: "Medicine", address: "Baerwaldstraße 16, 10961 Berlin", description: "A Nurse is responsible for supporting Physicians in administering patient care. Their duties include providing the correct dosage of medicine to patients, administering IVs based on their patients’ conditions and monitoring their patients’ vitals to ensure they have the proper blood pressure or heart rate"}
-ninth_job = Job.create(nurse_job)
-ninth_job.save!
+project_manager_job = {user: third_employer, position: "Project Manager", salary: 3000, level: "IT", address: "Viktoria-Luise-Platz 5, 10777 Berlin", description: "A project manager is responsible for planning and overseeing projects within an organisation, from the initial ideation through to completion. They coordinate people and processes to deliver projects on time, within budget and with the desired outcomes aligned to objectives"}
+third_job = Job.create(project_manager_job)
+third_job.save!
 ### Job 10
 fullstack_job = {user: third_employer, position: "Full Stack Developer", salary: 5000, level: "IT", address: "Naunynstraße 33, 10999 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
 tenth_job = Job.create(fullstack_job)
