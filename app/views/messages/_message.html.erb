@@ -4,7 +4,7 @@
     <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
   </small>
   <div class="display-inline-message" style="margin-left: 10px;">
-    <%= cl_image_tag message.user.avatar.key, :width => 40, :height => 40, style: "border-radius: 50%; display: block; margin-bottom: 10px;" %>
+    <%= cl_image_tag message.user.avatar.key, :width => 40, :height => 40, style: "border-radius: 50%; display: block; margin-bottom: 10px; margin-top: 10px;" %>
     <p style="color: black; margin-bottom: 0;"><%= message.content %></p>
   </div>
 </div>

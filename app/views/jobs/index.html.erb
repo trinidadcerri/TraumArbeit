@@ -2,15 +2,15 @@
 <div class="search-body">
 <div class="search-container">
 <%= form_with url: jobs_path, method: :get, class: "d-flex ", style: "width:100%" do %>
+<button type="submit" class="search-btn" style="margin-left: 5px">
+  <i class="fas fa-search"> </i>
+</button>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control input",
-    placeholder: "Looking for the job...", class: "search-input",
+    placeholder: " Looking for the job...", class: "search-input",
     style: "width:100%"
   %>
-<button type="submit" class="search-btn" style="margin-left: 5px">
-  <i class="fas fa-search"></i>
-</button>
 <% end %>
   </div>
 </div>
@@ -22,9 +22,15 @@
     <div class="card box-shadow my-5">
     <%#= image_tag "#{job.level}.png", class: "card-img-top", height: 200%>
       <div class="card-body">
+      <div class="row">
+      <div class="col-9">
         <strong><p class="card-title mb-3"><i class="fa-solid fa-user-large"></i> <%= job.position %></p></strong>
-        <p class="card-title"> <i class="fa-solid fa-hand-holding-dollar"></i>  <%= job.salary %> </p>
+        </div>
+        <div class="col-3">
         <p class="card-title"><i class="fa-solid fa-location-dot"></i> Berlin</p>
+        </div>
+        </div>
+        <p class="card-title"> <i class="fa-solid fa-hand-holding-dollar"></i>  <%= job.salary %> € </p>
         <p class="card-title"> <i class="fas fa-reply-all"></i> <%= job.level %> </p>
         <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200%>
         <p class="card-title"> <i class="fa-solid fa-building"></i> <span style="background-color: yellow;"><%= job.user.nickname %> </span>  </p>
