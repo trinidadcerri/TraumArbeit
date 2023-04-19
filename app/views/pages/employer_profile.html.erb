@@ -23,16 +23,12 @@
       <% end %>
       </div>
       <div class="col-6 mt-5 mb-5">
-        <div class="content">
+        <div class="content" style="margin-top:20px; text-align: center;">
           <h1><b><%= current_user.nickname %></b></h1>
-            <div class="profile-description">
+            <div class="profile-description" style="margin-top: 80px; text-align: center;">
               <h3>About <b>the company: </b></h3>
               <p style="font-size: 20px;"><%= current_user.profile_description %></p>
             </div>
-          <div class="d-flex">
-            <%= link_to "My messages", chatrooms_path, class: "button-neutral mb-3 mt-3 mx-3", style: "width: 200px;" %>
-            <button type="button" class="button-success mb-3 mt-3" , style="width: 200px;">My appointments</button>
-          </div>
         </div>
       </div>
     </div>

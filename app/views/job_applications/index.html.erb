@@ -42,7 +42,7 @@
                   <p class="card-text", style="text-align: center; font-size: 18px;"><b><%= link_to "See #{job_application.user.first_name} profile", candidate_path(job_application.user.id) %></b></p>
                     <% elsif job_application.accepted? %>
                     <div class="col-6">
-                      <%= link_to "Make an appoiment", new_job_appointment_path(application.id), class: "button-neutral mb-3", style: "width: 258px" %>
+                      <%= link_to "Make an appointment", new_job_appointment_path(application.id), class: "button-neutral mb-3", style: "width: 258px" %>
                     </div>
                     <p class="card-text", style="text-align: center;"><b><%= link_to "Decline", decline_path(job_application.id) %></b></p>
                     <% end %>
