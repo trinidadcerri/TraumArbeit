@@ -16,12 +16,17 @@
   </div>
   </div>
   <div class="col-3">
-  <strong> <p class= "mt-2 status"><%=chatroom.job_application.status.upcase %> </p></strong>
+  <strong> <p class= "mt-2  status"><%=chatroom.job_application.status.upcase %> </p></strong>
   </div>
   </div>
   <% else %>
+   <div class="row">
+  <div class="col-1">
   <%= cl_image_tag chatroom.job_application.job.user.avatar.key , :width => 40, :height => 40, style: "border-radius: 50%; display: block; margin-bottom: 10px;"%>
+  </div>
+  <div class="col-11">
   <%= link_to chatroom.employer_name, chatroom_path(chatroom)%>
+  </div>
   <% end %>
   </li>
   <% end %>
