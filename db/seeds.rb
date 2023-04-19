@@ -80,7 +80,7 @@ second_employer.save!
 mobi_team = {email: "mobi_team@example.com", password: "123456", first_name: "Mobi", last_name: "Team", job_seeker: false, profile_description: "Mobiteam does custom Web Design and Development. It is specialized in designing aesthetically beautiful and high-quality websites for corporate, personal and eCommerce. Our clients get websites that sell, attract and obtain market and customer’s respect.", nickname: "Mobi Team", profesion: "Recluiter", location: "Berlin" }
 third_employer = User.create(mobi_team)
 third_employer.avatar.attach(io: File.open("app/assets/images/mobi_team.png"), filename: third_employer.email, content_type: "image/png")
-third_employer.save!
+third_employer.sbiave!
 ### Employer 4 --> Service
 starbucks = {email: "starbucks@example.com", password: "123456", first_name: "Starbucks", last_name: "Coffee Shop", job_seeker: false, profile_description: "Starbucks Corp (Starbucks) is a specialty coffee retailer. It roasts, markets, and retails specialty coffee. The company, through its stores, offers several blends of coffee, handcrafted beverages, merchandise, and food items.", nickname: "Starbucks", profesion: "Recluiter", location: "Berlin" }
 fourth_employer = User.create(starbucks)

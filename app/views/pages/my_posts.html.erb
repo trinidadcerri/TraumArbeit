@@ -19,7 +19,7 @@
       <div class="row justify-content-center">
         <% current_user.jobs.each do |job| %>
           <div class="col-12 col-lg-3">
-              <div class="card box-shadow my-3">
+              <div class="card employer-card-box-shadow my-3">
               <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200 %>
                 <div class="card-body">
                   <h5 class="card-title", style="text-align: center;" ><b><%= job.position %></b></h5>
