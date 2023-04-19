@@ -27,15 +27,14 @@
                     <p class="card-title"><i class="fa-solid fa-location-dot"></i> Berlin</p>
                   <div class="row">
                     <div class="col-6">
-                      <%= link_to "Show", job_path(job), class: "button-success mb-3", style: "width: 100px" %>
+                      <%= link_to "See post", job_path(job), class: "button-success mb-3", style: "width: 120px" %>
                     </div>
                     <div class="col-6">
-                      <%= link_to "Edit", edit_job_path(job), class: "button-neutral mb-3", style: "width: 100px" %>
+                      <%= link_to "Edit post", edit_job_path(job), class: "button-neutral mb-3", style: "width: 120px" %>
                     </div>
-                    <div class="col-6">
-                      <%= link_to "Delete", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                      class: "button-wrong mb-3", style: "width: 100px" %>
-                    </div>
+                    <p class="card-text", style="text-align: center;"><b>
+                      <%= link_to "Delete the post", job_path(job), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                    </b></p>
                   </div>
                 </div>
               </div>
