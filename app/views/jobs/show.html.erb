@@ -4,14 +4,14 @@
     <h1><i class="fa-solid fa-user-large"></i> <strong><%= @job.position %></strong></h1>
 
     <p>
-         <i class="fa-solid fa-hand-holding-dollar"></i> <%= @job.salary %> <i class="fa-solid fa-euro-sign"></i>
-        <br>
-        <i class="fa-solid fa-location-dot"></i> <%= @job.address %>
-        <br>
-        <i class="fa-solid fa-suitcase"></i> <%= @job.level %>
-        <br>
-        <i class="fa-solid fa-user-doctor"></i> <%= @job.description %>
-        <br>
+      <i class="fa-solid fa-hand-holding-dollar"></i> <%= @job.salary %> <i class="fa-solid fa-euro-sign"></i>
+      <br>
+      <i class="fa-solid fa-location-dot"></i> <%= @job.address %>
+      <br>
+      <i class="fa-solid fa-suitcase"></i> <%= @job.level %>
+      <br>
+      <i class="fa-solid fa-user-doctor"></i> <%= @job.description %>
+      <br>
     </p>
     <div class="d-flex">
         <% if   current_user.present? && current_user.job_seeker %>
