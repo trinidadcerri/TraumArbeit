@@ -16,7 +16,7 @@ class AppointmentsController < ApplicationController
     @appointment.job = @job
     @appointment.user = current_user
     @appointment.save!
-      redirect_to calendar_path(@job, @appointment)
+    redirect_to employer_calendar_path
   end
 
   def show
