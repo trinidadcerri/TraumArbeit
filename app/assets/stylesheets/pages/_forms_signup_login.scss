@@ -4,6 +4,7 @@
 }
 
 .login-signup-form-container {
+  min-height: calc(100vh - 150px - 120px);
   background-color: #f5f5f5;
 	margin: 50px auto;
 	padding: 20px;
