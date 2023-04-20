@@ -16,40 +16,45 @@
   <div class="cards main-container">
     <div class="py-5 mb-5">
         <div class="row justify-content-center">
-          <% @my_applications.each do |application| %>
-          <% job_application = JobApplication.find_by(job_id: application.id) %>
-            <div class="col-12 col-lg-3">
-              <div class="card employer-card-box-shadow my-3">
-                <%= image_tag "#{application.level}.png", class: "card-img-top", height: 200 %>
-                <div class="card-body">
-                  <div class="row">
-                  <h5 class="card-title", style="text-align: center; margin-bottom: 15px;" ><b><%= application.position %></b></h5>
-                  <p class="card-title"> <i class="fa-solid fa-hand-holding-dollar"></i>  <%= application.salary %> €</p>
-                  <p class="card-title"> <i class="fa-solid fa-location-dot"></i>  <%= application.address %> </p>
-                  <p class="card-text", style="margin-top: 10px; text-align: center; font-size: 18px;"><b><%= job_application.user.first_name %> <%= job_application.user.last_name %></b> wants to apply</p>
-                  <p class="card-text", style="text-align: center; font-size: 18px;">
-                    The request is:  <br>
-                    <span style="background-color: yellow; font-size: 18px; font-weight: bold;"><%= job_application.status.upcase %></span> <br>
-                    </p>
-                    <% if job_application.pending? %>
-                      <%= link_to "Accept", accept_path(job_application.id), class: "button-success mb-3"%>
-                      <div class="row">
-                      <div class="col-6">
-                      <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_path(job_application.id), style: "text-decoration: none; color: red;" %></p>
+          <% @jobs.each do |job| %>
+            <h2><%= job.position %></h2>
+            <% job.job_applications.each do |application| %>
+              <% raise %>
+              <div class="col-12 col-lg-3">
+                <div class="card employer-card-box-shadow my-3">
+                  <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200 %>
+                  <div class="card-body">
+                    <div class="row">
+                    <h5 class="card-title", style="text-align: center; margin-bottom: 15px;" ><b><%= job.position %></b></h5>
+                    <p class="card-title"> <i class="fa-solid fa-hand-holding-dollar"></i>  <%= job.salary %> €</p>
+                    <p class="card-title"> <i class="fa-solid fa-location-dot"></i>  <%= job.address %> </p>
+                    <p class="card-text", style="margin-top: 10px; text-align: center; font-size: 18px;"><b><%= application.user.first_name %> <%= application.user.last_name %></b> wants to apply</p>
+                    <p class="card-text", style="text-align: center; font-size: 18px;">
+                      The request is:  <br>
+                      <span style="background-color: yellow; font-size: 18px; font-weight: bold;"><%= application.status.upcase %></span> <br>
+                      </p>
+                      <% if application.pending? %>
+                        <%= link_to "Accept", accept_job_application_path(application), class: "button-success mb-3", data: {turbo_method: :patch}%>
+                        <div class="row">
+                        <div class="col-6">
+                        <p class="card-text", style="text-align: center;">
+                          <%= link_to "Decline", decline_job_application_path(application), style: "text-decoration: none; color: red;", data: {turbo_method: :patch} %>
+                        </p>
+                        </div>
+                        <div class="col-6">
+                        <p class="card-text", style="text-align: center; text-decoration: none !important;"><%= link_to "#{application.user.first_name}'s profile", candidate_path(application.user.id), style: "text-decoration: none;" %></p>
                       </div>
-                      <div class="col-6">
-                      <p class="card-text", style="text-align: center; text-decoration: none !important;"><%= link_to "#{job_application.user.first_name}'s profile", candidate_path(job_application.user.id), style: "text-decoration: none;" %></p>
-                     </div>
-                     </div>
-                    <% elsif job_application.accepted? %>
-                      <%= link_to "Make an appointment", new_job_appointment_path(application.id), class: "button-neutral mb-3"%>
-                    <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_path(job_application.id), style: "text-decoration: none; color: red;" %></p>
-                    <% end %>
+                      </div>
+                      <% elsif application.accepted? %>
+                        <%= link_to "Make an appointment", new_job_appointment_path(application.id), class: "button-neutral mb-3"%>
+                      <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_path(application.id), style: "text-decoration: none; color: red;" %></p>
+                      <% end %>
+                      </div>
                     </div>
                   </div>
-                </div>
-            </div>
+              </div>
             <% end %>
+          <% end %>
         </div>
     </div>
   </div>
