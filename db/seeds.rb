@@ -46,23 +46,35 @@ fifth_jobseeker.avatar.attach(io: File.open("app/assets/images/olivia_wilson_pho
 fifth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/olivia_wilson_cv.pdf"), filename: fifth_jobseeker.last_name, content_type: "application/pdf")
 fifth_jobseeker.save!
 ### Jobseeker 6
-olga_iuzvyshyna = {gender: "female", email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Full-Stack Developer", location: "Berlin" }
+olga_iuzvyshyna = {gender: "female", email: "olga_Iuzvyshyna@example.com", password: "123456", first_name: "Olga", last_name: "Iuzvyshyna", job_seeker: true, profile_description: "With 9 years of working as a marketing manager, I have a responsible self-motivated approach to any task I undertake. I am excellent in working with other across a wide variety of backgrounds, and believe in clear and efficient communication.", nickname: "Olga", profesion: "Full Stack Developer", location: "Berlin" }
 sixth_jobseeker = User.create(olga_iuzvyshyna)
 sixth_jobseeker.avatar.attach(io: File.open("app/assets/images/Olga_Iuzvyshyna_photo.jpg"), filename: sixth_jobseeker.last_name, content_type: "image/jpg")
 sixth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Olga_Iuzvyshyna_cv.pdf"), filename: sixth_jobseeker.last_name, content_type: "application/pdf")
 sixth_jobseeker.save!
 ### Jobseeker 7
-trinidad_cerri = {gender: "female", email: "trinidad_cerri@example.com", password: "123456", first_name: "Trinidad", last_name: "Cerri", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Trinidad", profesion: "Full-Stack Developer", location: "Berlin" }
+trinidad_cerri = {gender: "female", email: "trinidad_cerri@example.com", password: "123456", first_name: "Trinidad", last_name: "Cerri", job_seeker: true, profile_description: "Innovative, creative and professional. Specialised in Digital Marketing and SM Marketing. I am a cheerful, ambitious and resilient person. I love my job and achieving milestones working with a team.", nickname: "Trinidad", profesion: "Full Stack Developer", location: "Berlin" }
 seventh_jobseeker = User.create(trinidad_cerri)
 seventh_jobseeker.avatar.attach(io: File.open("app/assets/images/CERRI - PHOTO.jpg"), filename: seventh_jobseeker.last_name, content_type: "image/jpg")
 seventh_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Maria_Trinidad_cv.pdf"), filename: seventh_jobseeker.last_name, content_type: "application/pdf")
 seventh_jobseeker.save!
 ### Jobseeker 8
-rodrigo_hoffman = {gender: "male", email: "rodrigo_hoffman@example.com", password: "123456", first_name: "Rodrigo", last_name: "Hoffman", job_seeker: true, profile_description: "I’m a Business Administration professional with 7+ years of experience. I worked in several positions and industries, which helped me to develop a broad vision in organizations. Originally from Chile, I moved to Germany to pursue a master’s degree and keep growing personally and professionally. However, not long ago I discovered my passion, and that is coding. I’m excited to begin the Full Stack Development program and to begin the next chapter of my life.", nickname: "Rodrigo", profesion: "Project Manager", location: "Berlin" }
+rodrigo_hoffman = {gender: "male", email: "rodrigo_hoffmann@example.com", password: "123456", first_name: "Rodrigo", last_name: "Hoffmann", job_seeker: true, profile_description: "I’m a Business Administration professional with 7+ years of experience. I worked in several positions and industries, which helped me to develop a broad vision in organizations. Originally from Chile, I moved to Germany to pursue a master’s degree and keep growing personally and professionally. However, not long ago I discovered my passion, and that is coding. I’m excited to begin the Full Stack Development program and to begin the next chapter of my life.", nickname: "Rodrigo", profesion: "Full Stack Developer", location: "Berlin" }
 eighth_jobseeker = User.create(rodrigo_hoffman)
 eighth_jobseeker.avatar.attach(io: File.open("app/assets/images/rodrigo_hoffman_photo.jpg"), filename: eighth_jobseeker.last_name, content_type: "image/jpg")
 eighth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/rodrigo_hoffman_cv.pdf"), filename: eighth_jobseeker.last_name, content_type: "application/pdf")
 eighth_jobseeker.save!
+### Jobseeker 9
+roger_silva = {gender: "male", email: "roger_silva@example.com", password: "123456", first_name: "Roger", last_name: "Silva", job_seeker: true, profile_description: "Hi, I’m Roger Silva, I'm from chile and since 2019 based in Berlin, I studied accounting but currently I am learning coding and web development. I'm interested in photography, travel and techno.", nickname: "Roger", profesion: "Full Stack Developer", location: "Berlin" }
+ninth_jobseeker = User.create(roger_silva)
+ninth_jobseeker.avatar.attach(io: File.open("app/assets/images/roger_photo.jpg"), filename: eighth_jobseeker.last_name, content_type: "image/jpg")
+ninth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Roger_cv.pdf"), filename: eighth_jobseeker.last_name, content_type: "application/pdf")
+ninth_jobseeker.save!
+### Jobseeker 10
+mahboob_omary = {gender: "male", email: "mahboob_omary@example.com", password: "123456", first_name: "Rodrigo", last_name: "Hoffman", job_seeker: true, profile_description: "Experienced IT officer, Ruby on Rails backend developer, and avid hiker with a passion for exploring the outdoors.", nickname: "Mahboob", profesion: "Full Stack Developer", location: "Berlin" }
+tenth_jobseeker = User.create(mahboob_omary)
+tenth_jobseeker.avatar.attach(io: File.open("app/assets/images/mahboob_photo.jpg"), filename: eighth_jobseeker.last_name, content_type: "image/jpg")
+tenth_jobseeker.cvs.attach(io: File.open("app/assets/pdfs/Mahboob Omary.pdf"), filename: eighth_jobseeker.last_name, content_type: "application/pdf")
+tenth_jobseeker.save!
 
 ########### Employers
 puts "Creating employers..."
