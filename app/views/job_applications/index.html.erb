@@ -19,7 +19,6 @@
           <% @jobs.each do |job| %>
             <h2><%= job.position %></h2>
             <% job.job_applications.each do |application| %>
-              <% raise %>
               <div class="col-12 col-lg-3">
                 <div class="card employer-card-box-shadow my-3">
                   <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200 %>

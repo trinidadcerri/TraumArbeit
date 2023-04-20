@@ -9,21 +9,15 @@ class JobApplicationsController < ApplicationController
   end
 
   def show
-    @job = Job.find(params[:job_id])
-    @application = JobApplication.new(job: @job, user: current_user)
-
-    @chatroom = Chatroom.new(employer_name: @job.user.first_name, applicant_name: current_user.first_name)
-    @chatroom.job_application = @application
-    @chatroom.save
+    @job_application = JobApplication.find(params[:id])
+    @job = @job_application.job
   end
 
   def create
-    @app = JobApplication.new
     @job = Job.find(params[:job_id])
-    @app.job = @job
-    @app.user = current_user
+    @app = @job.job_applications.new(user: current_user)
     if @app.save
-      redirect_to job_job_application_path(@job, @app)
+      redirect_to job_application_path(@app)
     else
       render 'job_applications/show', status: :unprocessable_entity
     end

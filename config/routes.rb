@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :jobs do
     resources :appointments, only: %i[new create show]
-    resources :job_applications, only: %i[new create show]
+    resources :job_applications, only: %i[new create]
     resources :appointments, only: %i[new create show]
     resources :favorites, only: %i[new create show]
   end
@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :job_applications, only: %i[index destroy] do
+  resources :job_applications, only: %i[index show destroy] do
+    resources :chatrooms, only: :create
     member do
       patch :accept
       patch :decline

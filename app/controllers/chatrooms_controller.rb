@@ -13,7 +13,17 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.new(chatroom_params)
+    @job_application = JobApplication.find(params[:job_application_id])
+    @job = @job_application.job
+    @chatroom = Chatroom.new(
+      employer_name: @job.user.first_name, applicant_name: current_user.first_name,
+      job_application: @job_application
+    )
+    if @chatroom.save
+      redirect_to chatroom_path(@chatroom)
+    else
+      render 'job_applications/show'
+    end
   end
 
   private
@@ -21,5 +31,4 @@ class ChatroomsController < ApplicationController
   def chatroom_params
     params.require(:chatroom)
   end
-
 end
