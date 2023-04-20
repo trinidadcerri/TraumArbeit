@@ -22,16 +22,24 @@
     <%#= image_tag "#{favorite.job.level}.jpg", class: "card-img-top", height: 200%>
       <div class="card-body">
       <div class="row">
-       <strong> <p class="card-text"><i class="fa-solid fa-user-large"></i> <%= favorite.job.position %></p></strong>
-        <p class="card-text"> <i class="fa-solid fa-hand-holding-dollar"></i> <%= favorite.job.salary %> </p>
-        <p class="card-text"> <i class="fas fa-reply-all"></i> <%= favorite.job.level %> </p>
+      <div class="col-8">
+       <strong> <p class="card-title"><i class="fa-solid fa-user-large"></i> <%= favorite.job.position %></p></strong>
+       </div>
+       <div class="col-4">
+        <p class="card-title"><i class="fa-solid fa-location-dot"></i> Berlin</p>
+        </div>
+        <p class="card-title"> <i class="fa-solid fa-hand-holding-dollar"></i> <%= favorite.job.salary %> </p>
+        <p class="card-title"> <i class="fas fa-reply-all"></i> <%= favorite.job.level %> </p>
+        <%= image_tag "#{favorite.job.level}.png", class: "card-img-top", height: 200%>
+      <div class="row">
       <div class="col-6">
-        <%= link_to "Apply", chatrooms_path, class: "card-button mb-3", style: "width: 100px" %>
+        <%= link_to "Apply", chatrooms_path, class: "card-button mb-3 mx-2", style: "width: 100px" %>
       </div>
       <div class="col-6">
         <%= link_to "Delete", favorite_path(favorite), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-          class: "card-button mb-3", style: "width: 100px" %>
+          class: "card-button mb-3 mx-3", style: "width: 100px" %>
         </div>
+      </div>
       </div>
       </div>
     </div>
