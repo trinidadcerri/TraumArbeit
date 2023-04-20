@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :job_applications, only: %i[index show destroy] do
+  resources :job_applications, only: %i[index destroy] do
     resources :chatrooms, only: :create
     member do
       patch :accept
