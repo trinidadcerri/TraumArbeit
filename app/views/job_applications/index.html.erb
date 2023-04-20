@@ -46,7 +46,7 @@
                       </div>
                       <% elsif application.accepted? %>
                         <%= link_to "Make an appointment", new_job_appointment_path(application.id), class: "button-neutral mb-3"%>
-                      <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_path(application.id), style: "text-decoration: none; color: red;" %></p>
+                      <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_job_application_path(application), style: "text-decoration: none; color: red;", data: {turbo_method: :patch} %></p>
                       <% end %>
                       </div>
                     </div>
