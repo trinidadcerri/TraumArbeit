@@ -8,16 +8,16 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-  def show
-    @job_application = JobApplication.find(params[:id])
-    @job = @job_application.job
-  end
+  # def show
+  #   @job_application = JobApplication.find(params[:id])
+  #   @job = @job_application.job
+  # end
 
   def create
     @job = Job.find(params[:job_id])
     @app = @job.job_applications.new(user: current_user)
     if @app.save
-      redirect_to job_application_path(@app)
+      redirect_to job_path(@job)
     else
       render 'job_applications/show', status: :unprocessable_entity
     end
