@@ -139,6 +139,38 @@ eleventh_job.save!
 cafe_support_manager_job = {user: fourth_employer, position: "Café Support Manager", salary: 2500, level: "Service", address: "Am Wriezener bhf, 10243 Berlin", description: "All new cafe/chef managers start training through our support team model. After training, the support manager may be assigned to their own café location. The support manager is responsible for the day-to-day operations of the café, including the hiring, training, and development of the café staff."}
 twelfth_job = Job.create(cafe_support_manager_job)
 twelfth_job.save!
+########## Job 13 (mobi jobs)
+junior_developer_job = {user: third_employer, position: "Junior Front End Developer", salary: 3000, level: "IT", address: "Sonnnenalle 4, 10967 Berlin", description: "Developers, also known as software developers or computer programmers, are responsible for developing, coding, installing, and maintaining software systems. Developers form a key part of the IT team and may be required to modify existing software products or develop entirely new resources."}
+thirteenth_job = Job.create(junior_developer_job)
+thirteenth_job.save!
+### Job 14
+senior_developer_job = {user: third_employer, position: "Senior Front End Developer", salary: 6000, level: "IT", address: "Naunynstraße 33, 10999 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+fourteenth_job = Job.create(senior_developer_job)
+fourteenth_job.save!
+### Job 15
+berlin_backend_developer_job = {user: third_employer, position: "Berlin Back End Developer", salary: 4500, level: "IT", address: "Seumestraße 4, 10245 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+fifteenth_job = Job.create(berlin_backend_developer_job)
+fifteenth_job.save!
+### Job 16
+fullstack_developer_job = {user: third_employer, position: "Full Stack Developer", salary: 5000, level: "IT", address: "Sonnnenalle 4, 10967 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+sixteenth_job = Job.create(fullstack_developer_job)
+sixteenth_job.save!
+### Job 17
+remote_developer_job = {user: third_employer, position: "Remote Developer", salary: 3300, level: "IT", address: "Sredzkistraße 1, 10435 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+seventeenth_job = Job.create(remote_developer_job)
+seventeenth_job.save!
+### Job 18
+berlin_inoffice_developer_job = {user: third_employer, position: "Berlin in office Developer", salary: 3800, level: "IT", address: "Naunynstraße 33, 10999 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+eighteenth_job = Job.create(berlin_inoffice_developer_job)
+eighteenth_job.save!
+### Job 19
+remote_fullstack_developer_job = {user: third_employer, position: "Remote Full Stack Developer", salary: 2000, level: "IT", address: "Seumestraße 4, 10245 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+nineteenth_job = Job.create(remote_fullstack_developer_job)
+nineteenth_job.save!
+### Job 20
+freelance_developer_job = {user: third_employer, position: "Freelance Developer", salary: 1000, level: "IT", address: "Sredzkistraße 1, 10435 Berlin", description: "The primary responsibility of a Full Stack Developer includes designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms. Particular responsibilities often include: Developing front end website architecture."}
+twelfth_job = Job.create(freelance_developer_job)
+twelfth_job.save!
 ##########
 puts "Finished!"
 ##########
