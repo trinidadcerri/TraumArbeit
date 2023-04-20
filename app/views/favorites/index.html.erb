@@ -33,7 +33,8 @@
         <%= image_tag "#{favorite.job.level}.png", class: "card-img-top", height: 200%>
       <div class="row">
       <div class="col-6">
-        <%= link_to "Apply", chatrooms_path, class: "card-button mb-3 mx-2", style: "width: 100px" %>
+        <%#= link_to "Apply", chatrooms_path, class: "card-button mb-3 mx-2", style: "width: 100px" %>
+          <%= button_to "Apply", job_job_applications_path(favorite.job), method: :post, class: "card-button mb-3 mx-", style: "width: 100px;" %>
       </div>
       <div class="col-6">
         <%= link_to "Delete", favorite_path(favorite), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
