@@ -36,7 +36,7 @@ class PagesController < ApplicationController
   def calendar
     # @appointments = Appointment.all
     start_date = params.fetch(:date, Date.today).to_date
-    @appointments = current_user.appointments.where(date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @appointments = current_user.job_applications.includes(job: :appointments).where(status: "accepted").flat_map(&:job).flat_map(&:appointments).select { |appointment| appointment.date.between?(start_date.beginning_of_month.beginning_of_week, start_date.end_of_month.end_of_week) }.uniq
   end
 
   def employer_calendar
