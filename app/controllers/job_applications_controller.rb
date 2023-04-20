@@ -33,14 +33,14 @@ class JobApplicationsController < ApplicationController
     @app = JobApplication.find(params[:id])
     @app.status = "accepted"
     @app.save
-    redirect_to job_applications_path
+    redirect_to job_applications_path, status: :see_other
   end
 
   def decline
     @app = JobApplication.find(params[:id])
     @app.status = "declined"
     @app.save
-    redirect_to job_applications_path
+    redirect_to job_applications_path, status: :see_other
   end
 
   def destroy

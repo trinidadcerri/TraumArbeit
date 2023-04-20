@@ -32,10 +32,10 @@
                     <span style="background-color: yellow; font-size: 18px; font-weight: bold;"><%= job_application.status.upcase %></span> <br>
                     </p>
                     <% if job_application.pending? %>
-                      <%= link_to "Accept", accept_path(job_application.id), class: "button-success mb-3"%>
+                      <%= link_to "Accept", accept_job_application_path(job_application.id), class: "button-success mb-3", data: {turbo_method: :patch}%>
                       <div class="row">
                       <div class="col-6">
-                      <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_path(job_application.id), style: "text-decoration: none; color: red;" %></p>
+                      <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_job_application_path(job_application.id), style: "text-decoration: none; color: red;", data: {turbo_method: :patch}  %></p>
                       </div>
                       <div class="col-6">
                       <p class="card-text", style="text-align: center; text-decoration: none !important;"><%= link_to "#{job_application.user.first_name}'s profile", candidate_path(job_application.user.id), style: "text-decoration: none;" %></p>
@@ -43,7 +43,7 @@
                      </div>
                     <% elsif job_application.accepted? %>
                       <%= link_to "Make an appointment", new_job_appointment_path(application.id), class: "button-neutral mb-3"%>
-                    <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_path(job_application.id), style: "text-decoration: none; color: red;" %></p>
+                    <p class="card-text", style="text-align: center;"><%= link_to "Decline", decline_job_application_path(job_application.id), style: "text-decoration: none; color: red;", data: {turbo_method: :patch} %></p>
                     <% end %>
                     </div>
                   </div>
