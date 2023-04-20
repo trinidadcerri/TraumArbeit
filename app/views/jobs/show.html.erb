@@ -21,7 +21,6 @@
                 <div class="favorite-icon"><i class="fa-solid fa-heart fa-2x"></i></div>
             <% end %>
           <% else %>
-               <%#= button_to "Save this job", job_favorites_path(@job), method: :post, class: "card-button mx-5", style: "width: 200px;" %>
             <%= link_to(job_favorites_path(@job), data: {turbo_method: :post}) do %>
                 <div class="favorite-icon"><i class="fa-regular fa-heart fa-2x"></i></div>
             <% end %>

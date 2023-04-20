@@ -6,8 +6,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
   has_many_attached :cvs
+
   has_many :jobs
+
   has_many :job_applications, dependent: :destroy
+  has_many :applicants, through: :job_applications, source: :user
+
   has_many :appointments
 
   has_many :favorites

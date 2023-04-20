@@ -34,8 +34,8 @@
         <p class="card-title"> <i class="fas fa-reply-all"></i> <%= job.level %> </p>
         <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200%>
         <p class="card-title"> <i class="fa-solid fa-building"></i> <span style="background-color: yellow;"><%= job.user.nickname %> </span>  </p>
-        <%= link_to job, class: "card-button mb-3" do %>
-        <i class="fa-solid fa-magnifying-glass"></i> See details
+        <%= link_to job_path(job), class: "card-button mb-3" do %>
+          <i class="fa-solid fa-magnifying-glass"></i> See details
         <% end %>
       </div>
     </div>

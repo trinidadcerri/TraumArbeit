@@ -2,7 +2,7 @@
   <div class="container">
     <h1><i class="fa-solid fa-user-large"></i> <strong><%= @job.position %></strong></h1>
     <p>
-         <i class="fa-solid fa-hand-holding-dollar"></i> <%= @job.salary %> <i class="fa-solid fa-euro-sign"></i>
+        <i class="fa-solid fa-hand-holding-dollar"></i> <%= @job.salary %> <i class="fa-solid fa-euro-sign"></i>
         <br>
         <i class="fa-solid fa-location-dot"></i> <%= @job.address %>
         <br>
@@ -12,7 +12,7 @@
         <br>
     </p>
     <div class="d-flex">
-      <%= link_to "DM HR manager", chatroom_path(@chatroom), class: "button-neutral", style: "width: 200px; line-height: 35px;" %>
+      <%= link_to "DM HR manager", job_application_chatrooms_path(@job_application), class: "button-neutral", style: "width: 200px; line-height: 35px;", data: {turbo_method: :post} %>
       <div class="flash flash-success alert-dismissible fade show" role="alert">
         <span><strong>Yay!</strong> 🎉 you successfully applied for the job!</span>
         <a data-bs-dismiss="alert" aria-label="Close">
