@@ -31,14 +31,18 @@
         </div>
         <p class="card-title"> <i class="fa-solid fa-hand-holding-dollar"></i>  <%= job.salary %> € </p>
         <p class="card-title"> <i class="fas fa-reply-all"></i> <%= job.level %> </p>
-        <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200%>
-          <p class="card-title"> <i class="fa-solid fa-building"></i> <span style="background-color: yellow;"><%= job.user.nickname %> </span>  </p>
-        <%= link_to job_path(job), class: "card-button mb-3" do %>
-          <i class="fa-solid fa-magnifying-glass"></i> See details
-        <% end %>
-        <% if job.job_applications.include?(user: current_user) %>
-          <p>Applied</p>
-        <% end %>
+          <%= image_tag "#{job.level}.png", class: "card-img-top", height: 200%>
+            <p class="card-title"> <i class="fa-solid fa-building"></i> <span style="background-color: yellow;"><%= job.user.nickname %> </span>  </p>
+          <div class="application-block">
+          <%= link_to job_path(job), class: "card-button" do %>
+            <i class="fa-solid fa-magnifying-glass"></i> See details
+          <% end %>
+          <% unless job.job_applications.find_by(user: current_user).nil? %>
+            <div class="applied-icon applied-small">
+              <p class="clean">Applied</p>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
