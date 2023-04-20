@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointment, only: [:show, :destroy]
+  before_action :set_appointment, only: %i[show destroy]
 
   def index
     @appointments = Appointment.all
