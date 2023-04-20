@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_job, except: %i[index create new]
+  before_action :check_jobseeker, only: %i[edit destroy new]
+
   def index
     if params[:query].present?
       @jobs = Job.search_by_position_and_address(params[:query])
@@ -10,17 +12,14 @@ class JobsController < ApplicationController
   end
 
   def show
+    return unless current_user
+
     @favorite = Favorite.new
-    @check_favorite = Favorite.find_by(job_id: @job.id, user_id: current_user.id)
-    if @user.present?
-      @job_application = JobApplication.all.where(user_id: current_user.id).where(job_id: @job.id)
-    end
+    @check_favorite = current_user.favorites.find_by(job: @job)
+    @job_application = current_user.job_applications.find_by(job: @job)
   end
 
   def new
-    if current_user.job_seeker == true
-      redirect_to jobs_path, notice: "You are not authorized to access this page"
-    end
     @job = Job.new
   end
 
@@ -35,9 +34,6 @@ class JobsController < ApplicationController
   end
 
   def edit
-    if current_user.job_seeker == true
-      redirect_to jobs_path, notice: "You are not authorized to access this page"
-    end
   end
 
   def update
@@ -53,9 +49,6 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    if current_user.job_seeker == true
-      redirect_to jobs_path, notice: "You are not authorized to access this page"
-    end
     if current_user == @job.user
       @job.destroy
       redirect_to jobs_path, notice: 'Job position was successfully destroyed.'
@@ -72,5 +65,9 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:position, :description, :salary, :level, :address)
+  end
+
+  def check_jobseeker
+    redirect_to jobs_path, notice: "You are not authorized to access this page" if current_user.job_seeker
   end
 end

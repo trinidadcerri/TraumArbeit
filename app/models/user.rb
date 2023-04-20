@@ -9,9 +9,13 @@ class User < ApplicationRecord
   has_many :jobs
   has_many :job_applications, dependent: :destroy
   has_many :appointments
+
+  has_many :favorites
+  has_many :favorite_jobs, through: :favorites, source: :job
+
   pg_search_scope :search_by_profesion_and_location,
-  against: [ :profesion, :location ],
-  using: {
-    tsearch: { prefix: true }
-  }
+                  against: %i[profesion location],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

@@ -1,10 +1,10 @@
 class JobApplicationsController < ApplicationController
-  before_action :set_app, only: [:show, :destroy]
+  before_action :set_app, only: %i[show destroy]
 
   def index
-    @jobs = current_user.jobs.includes(:job_applications)
-    @my_applications = @jobs.select do |job|
-      !job.job_applications.empty?
+    all_jobs = current_user.jobs.includes(:job_applications)
+    @jobs = all_jobs.reject do |job|
+      job.job_applications.empty?
     end
   end
 
